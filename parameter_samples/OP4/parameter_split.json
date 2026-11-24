@@ -1,0 +1,292 @@
+{
+  "schema": "bright_hump_alpha_protocol_20261013_v1",
+  "split_seed": 20261013,
+  "alpha_open_range": [
+    0.2,
+    0.9
+  ],
+  "beta": 0.5,
+  "gamma": 1.0,
+  "domain": {
+    "x": [
+      0.0,
+      40.0
+    ],
+    "y": [
+      0.0,
+      40.0
+    ],
+    "t": [
+      0.0,
+      4.0
+    ]
+  },
+  "source": 0.0,
+  "potential": 0.0,
+  "initial": "sech(x-20)*sech(y-20), real; imaginary zero",
+  "boundary": "periodic in x and y",
+  "training": [
+    {
+      "parameter_id": "train_000",
+      "alpha": 0.2417161467598007,
+      "mu": [
+        0.2417161467598007,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "train_001",
+      "alpha": 0.8404858199473939,
+      "mu": [
+        0.8404858199473939,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "train_002",
+      "alpha": 0.5724623972370995,
+      "mu": [
+        0.5724623972370995,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "train_003",
+      "alpha": 0.3669870778313906,
+      "mu": [
+        0.3669870778313906,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "train_004",
+      "alpha": 0.673607736704055,
+      "mu": [
+        0.673607736704055,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "train_005",
+      "alpha": 0.4816969798644719,
+      "mu": [
+        0.4816969798644719,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "train_006",
+      "alpha": 0.8053113512920191,
+      "mu": [
+        0.8053113512920191,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "train_007",
+      "alpha": 0.4520163630254384,
+      "mu": [
+        0.4520163630254384,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "parameter_id": "validation_000",
+      "alpha": 0.3,
+      "mu": [
+        0.3,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "validation_001",
+      "alpha": 0.45,
+      "mu": [
+        0.45,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "validation_002",
+      "alpha": 0.65,
+      "mu": [
+        0.65,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "validation_003",
+      "alpha": 0.85,
+      "mu": [
+        0.85,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "test": [
+    {
+      "parameter_id": "test_000",
+      "alpha": 0.4,
+      "mu": [
+        0.4,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "test_001",
+      "alpha": 0.5,
+      "mu": [
+        0.5,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "test_002",
+      "alpha": 0.6,
+      "mu": [
+        0.6,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "test_003",
+      "alpha": 0.7,
+      "mu": [
+        0.7,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "parameter_id": "test_004",
+      "alpha": 0.8,
+      "mu": [
+        0.8,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "stage_parameter_counts": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "stage_nodes_per_spatial_axis": [
+    5,
+    10,
+    15,
+    20,
+    25
+  ],
+  "time_intervals": [
+    4,
+    9,
+    14,
+    19,
+    24
+  ],
+  "full_grid_shapes": [
+    [
+      5,
+      5,
+      5
+    ],
+    [
+      10,
+      10,
+      10
+    ],
+    [
+      15,
+      15,
+      15
+    ],
+    [
+      20,
+      20,
+      20
+    ],
+    [
+      25,
+      25,
+      25
+    ]
+  ],
+  "stage_training_ids": [
+    [
+      "train_000",
+      "train_001",
+      "train_002",
+      "train_003"
+    ],
+    [
+      "train_000",
+      "train_001",
+      "train_002",
+      "train_003",
+      "train_004"
+    ],
+    [
+      "train_000",
+      "train_001",
+      "train_002",
+      "train_003",
+      "train_004",
+      "train_005"
+    ],
+    [
+      "train_000",
+      "train_001",
+      "train_002",
+      "train_003",
+      "train_004",
+      "train_005",
+      "train_006"
+    ],
+    [
+      "train_000",
+      "train_001",
+      "train_002",
+      "train_003",
+      "train_004",
+      "train_005",
+      "train_006",
+      "train_007"
+    ]
+  ],
+  "sampling": "stratified uniform orders in (0.2,0.9), ordered by nested maximin coverage",
+  "validation_grid": {
+    "nx": 64,
+    "ny": 64,
+    "nt": 32
+  },
+  "test_grid": {
+    "nx": 128,
+    "ny": 128,
+    "nt": 256
+  },
+  "evaluation": "uniform periodic spatial nodes [0,40), full uniform temporal nodes including 0 and 4",
+  "replication": "same nested orders, validation/test partitions and evaluation grids across training seeds",
+  "test_use": "test labels read only after final validation-selected checkpoint is fixed",
+  "design_sha256": "aaf21df085cf27bed4e0a40dc4cd2ed592b484b880e810972c315f10dac1cd3a"
+}

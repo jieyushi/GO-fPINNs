@@ -1,0 +1,13 @@
+{
+  "C01": {"category": "forward", "path": "experiments/forward/C01", "entrypoint": "run_case1.py", "title": "Standard fixed-parameter problem"},
+  "C02": {"category": "forward", "path": "experiments/forward/C02", "entrypoint": "run_largescale.py", "title": "Large spatial domain and domain decomposition"},
+  "C03": {"category": "forward", "path": "experiments/forward/C03", "entrypoint": "run_longtime.py", "title": "Long-time evolution and temporal windows"},
+  "I01": {"category": "inverse", "path": "experiments/inverse/I01", "entrypoint": "run_inverse.py", "title": "Constant-coefficient identification"},
+  "I02": {"category": "inverse", "path": "experiments/inverse/I02", "entrypoint": "run_potential.py", "title": "One-dimensional potential reconstruction"},
+  "I03": {"category": "inverse", "path": "experiments/inverse/I03", "entrypoint": "run_potential2d.py", "title": "Two-dimensional potential reconstruction"},
+  "OP1": {"category": "operator", "path": "experiments/operator/case1", "entrypoint": "case1.py", "title": "Three separately trained single-parameter operators"},
+  "OP2": {"category": "operator", "path": "experiments/operator/case2", "entrypoint": "case2.py", "title": "Joint alpha-beta-gamma manufactured operator"},
+  "OP3": {"category": "operator", "path": "experiments/operator/case3", "entrypoint": "case3.py", "title": "Fixed-data beta-gamma operator with ADI references"},
+  "OP4": {"category": "operator", "path": "experiments/operator/case4", "entrypoint": "case4.py", "title": "Bright-hump alpha operator with ADI references"}
+}
+

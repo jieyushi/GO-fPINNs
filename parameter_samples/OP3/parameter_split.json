@@ -1,0 +1,917 @@
+{
+  "schema": "fixed_data_beta_gamma_holdout_20261013_v1",
+  "split_seed": 20261014,
+  "parameter_names": [
+    "alpha",
+    "beta_dispersion",
+    "gamma_nonlinearity"
+  ],
+  "varied_parameters": [
+    "beta_dispersion",
+    "gamma_nonlinearity"
+  ],
+  "fixed_alpha": 0.800000011920929,
+  "beta_open_range": [
+    0.5,
+    1.5
+  ],
+  "gamma_open_range": [
+    1.0,
+    2.0
+  ],
+  "domain": {
+    "x": [
+      0.0,
+      3.141592653589793
+    ],
+    "y": [
+      0.0,
+      3.141592653589793
+    ],
+    "t": [
+      0.0,
+      1.0
+    ]
+  },
+  "initial_condition": "u(x,y,0)=sin(x)sin(y), v(x,y,0)=0",
+  "boundary": "u=v=0 on all four faces for all t and all parameter pairs",
+  "source": 0.0,
+  "potential": 0.0,
+  "training": [
+    {
+      "parameter_id": "train_lhs_0000",
+      "mu": [
+        0.800000011920929,
+        0.5009999871253967,
+        1.9989999532699585
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.5009999871253967,
+      "gamma_nonlinearity": 1.9989999532699585
+    },
+    {
+      "parameter_id": "train_lhs_0001",
+      "mu": [
+        0.800000011920929,
+        0.6811411380767822,
+        1.1734027862548828
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6811411380767822,
+      "gamma_nonlinearity": 1.1734027862548828
+    },
+    {
+      "parameter_id": "train_lhs_0002",
+      "mu": [
+        0.800000011920929,
+        0.7528767585754395,
+        1.584537148475647
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.7528767585754395,
+      "gamma_nonlinearity": 1.584537148475647
+    },
+    {
+      "parameter_id": "train_lhs_0003",
+      "mu": [
+        0.800000011920929,
+        0.9014798998832703,
+        1.6679261922836304
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.9014798998832703,
+      "gamma_nonlinearity": 1.6679261922836304
+    },
+    {
+      "parameter_id": "train_lhs_0004",
+      "mu": [
+        0.800000011920929,
+        1.1201250553131104,
+        1.338361382484436
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.1201250553131104,
+      "gamma_nonlinearity": 1.338361382484436
+    },
+    {
+      "parameter_id": "train_lhs_0005",
+      "mu": [
+        0.800000011920929,
+        1.2154351472854614,
+        1.4278042316436768
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.2154351472854614,
+      "gamma_nonlinearity": 1.4278042316436768
+    },
+    {
+      "parameter_id": "train_lhs_0006",
+      "mu": [
+        0.800000011920929,
+        1.2913066148757935,
+        1.783957839012146
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.2913066148757935,
+      "gamma_nonlinearity": 1.783957839012146
+    },
+    {
+      "parameter_id": "train_lhs_0007",
+      "mu": [
+        0.800000011920929,
+        1.4989999532699585,
+        1.0010000467300415
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4989999532699585,
+      "gamma_nonlinearity": 1.0010000467300415
+    },
+    {
+      "parameter_id": "train_lhs_0008",
+      "mu": [
+        0.800000011920929,
+        0.9413832426071167,
+        1.282368779182434
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.9413832426071167,
+      "gamma_nonlinearity": 1.282368779182434
+    },
+    {
+      "parameter_id": "train_lhs_0009",
+      "mu": [
+        0.800000011920929,
+        0.6228567361831665,
+        1.541719913482666
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6228567361831665,
+      "gamma_nonlinearity": 1.541719913482666
+    },
+    {
+      "parameter_id": "train_lhs_0010",
+      "mu": [
+        0.800000011920929,
+        1.0605614185333252,
+        1.846048355102539
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0605614185333252,
+      "gamma_nonlinearity": 1.846048355102539
+    },
+    {
+      "parameter_id": "train_lhs_0011",
+      "mu": [
+        0.800000011920929,
+        1.3518927097320557,
+        1.0912052392959595
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3518927097320557,
+      "gamma_nonlinearity": 1.0912052392959595
+    },
+    {
+      "parameter_id": "train_lhs_0012",
+      "mu": [
+        0.800000011920929,
+        1.4331070184707642,
+        1.7420830726623535
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4331070184707642,
+      "gamma_nonlinearity": 1.7420830726623535
+    },
+    {
+      "parameter_id": "train_lhs_0013",
+      "mu": [
+        0.800000011920929,
+        1.1796072721481323,
+        1.2025325298309326
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.1796072721481323,
+      "gamma_nonlinearity": 1.2025325298309326
+    },
+    {
+      "parameter_id": "train_lhs_0014",
+      "mu": [
+        0.800000011920929,
+        0.8572714328765869,
+        1.468917727470398
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.8572714328765869,
+      "gamma_nonlinearity": 1.468917727470398
+    },
+    {
+      "parameter_id": "train_lhs_0015",
+      "mu": [
+        0.800000011920929,
+        0.6895073056221008,
+        1.8901013135910034
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6895073056221008,
+      "gamma_nonlinearity": 1.8901013135910034
+    }
+  ],
+  "validation": [
+    {
+      "parameter_id": "validation_0000",
+      "mu": [
+        0.800000011920929,
+        1.4836004972457886,
+        1.3929197788238525
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4836004972457886,
+      "gamma_nonlinearity": 1.3929197788238525
+    },
+    {
+      "parameter_id": "validation_0001",
+      "mu": [
+        0.800000011920929,
+        0.8539682626724243,
+        1.3474469184875488
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.8539682626724243,
+      "gamma_nonlinearity": 1.3474469184875488
+    },
+    {
+      "parameter_id": "validation_0002",
+      "mu": [
+        0.800000011920929,
+        1.4102755784988403,
+        1.572069764137268
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4102755784988403,
+      "gamma_nonlinearity": 1.572069764137268
+    },
+    {
+      "parameter_id": "validation_0003",
+      "mu": [
+        0.800000011920929,
+        1.4113658666610718,
+        1.8307541608810425
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4113658666610718,
+      "gamma_nonlinearity": 1.8307541608810425
+    },
+    {
+      "parameter_id": "validation_0004",
+      "mu": [
+        0.800000011920929,
+        1.0040080547332764,
+        1.9006149768829346
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0040080547332764,
+      "gamma_nonlinearity": 1.9006149768829346
+    },
+    {
+      "parameter_id": "validation_0005",
+      "mu": [
+        0.800000011920929,
+        1.09884512424469,
+        1.2752070426940918
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.09884512424469,
+      "gamma_nonlinearity": 1.2752070426940918
+    },
+    {
+      "parameter_id": "validation_0006",
+      "mu": [
+        0.800000011920929,
+        0.6976203322410583,
+        1.2834440469741821
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6976203322410583,
+      "gamma_nonlinearity": 1.2834440469741821
+    },
+    {
+      "parameter_id": "validation_0007",
+      "mu": [
+        0.800000011920929,
+        1.304901123046875,
+        1.6707483530044556
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.304901123046875,
+      "gamma_nonlinearity": 1.6707483530044556
+    },
+    {
+      "parameter_id": "validation_0008",
+      "mu": [
+        0.800000011920929,
+        1.2386988401412964,
+        1.7108124494552612
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.2386988401412964,
+      "gamma_nonlinearity": 1.7108124494552612
+    },
+    {
+      "parameter_id": "validation_0009",
+      "mu": [
+        0.800000011920929,
+        1.40528404712677,
+        1.9059418439865112
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.40528404712677,
+      "gamma_nonlinearity": 1.9059418439865112
+    },
+    {
+      "parameter_id": "validation_0010",
+      "mu": [
+        0.800000011920929,
+        0.6021444201469421,
+        1.4866468906402588
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6021444201469421,
+      "gamma_nonlinearity": 1.4866468906402588
+    },
+    {
+      "parameter_id": "validation_0011",
+      "mu": [
+        0.800000011920929,
+        1.3104884624481201,
+        1.0705313682556152
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3104884624481201,
+      "gamma_nonlinearity": 1.0705313682556152
+    },
+    {
+      "parameter_id": "validation_0012",
+      "mu": [
+        0.800000011920929,
+        1.1893471479415894,
+        1.0631928443908691
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.1893471479415894,
+      "gamma_nonlinearity": 1.0631928443908691
+    },
+    {
+      "parameter_id": "validation_0013",
+      "mu": [
+        0.800000011920929,
+        1.1892030239105225,
+        1.2871389389038086
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.1892030239105225,
+      "gamma_nonlinearity": 1.2871389389038086
+    },
+    {
+      "parameter_id": "validation_0014",
+      "mu": [
+        0.800000011920929,
+        0.8238530158996582,
+        1.79889976978302
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.8238530158996582,
+      "gamma_nonlinearity": 1.79889976978302
+    },
+    {
+      "parameter_id": "validation_0015",
+      "mu": [
+        0.800000011920929,
+        0.9356003403663635,
+        1.3993903398513794
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.9356003403663635,
+      "gamma_nonlinearity": 1.3993903398513794
+    }
+  ],
+  "test": [
+    {
+      "parameter_id": "test_0000",
+      "mu": [
+        0.800000011920929,
+        1.4290369749069214,
+        1.7665486335754395
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4290369749069214,
+      "gamma_nonlinearity": 1.7665486335754395
+    },
+    {
+      "parameter_id": "test_0001",
+      "mu": [
+        0.800000011920929,
+        0.6759763956069946,
+        1.5960924625396729
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6759763956069946,
+      "gamma_nonlinearity": 1.5960924625396729
+    },
+    {
+      "parameter_id": "test_0002",
+      "mu": [
+        0.800000011920929,
+        1.3169585466384888,
+        1.6898094415664673
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3169585466384888,
+      "gamma_nonlinearity": 1.6898094415664673
+    },
+    {
+      "parameter_id": "test_0003",
+      "mu": [
+        0.800000011920929,
+        0.5920741558074951,
+        1.3185937404632568
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.5920741558074951,
+      "gamma_nonlinearity": 1.3185937404632568
+    },
+    {
+      "parameter_id": "test_0004",
+      "mu": [
+        0.800000011920929,
+        1.3957855701446533,
+        1.4701532125473022
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3957855701446533,
+      "gamma_nonlinearity": 1.4701532125473022
+    },
+    {
+      "parameter_id": "test_0005",
+      "mu": [
+        0.800000011920929,
+        1.1212307214736938,
+        1.90740168094635
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.1212307214736938,
+      "gamma_nonlinearity": 1.90740168094635
+    },
+    {
+      "parameter_id": "test_0006",
+      "mu": [
+        0.800000011920929,
+        1.251828908920288,
+        1.1874333620071411
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.251828908920288,
+      "gamma_nonlinearity": 1.1874333620071411
+    },
+    {
+      "parameter_id": "test_0007",
+      "mu": [
+        0.800000011920929,
+        0.892842710018158,
+        1.7154085636138916
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.892842710018158,
+      "gamma_nonlinearity": 1.7154085636138916
+    },
+    {
+      "parameter_id": "test_0008",
+      "mu": [
+        0.800000011920929,
+        1.2177990674972534,
+        1.678951621055603
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.2177990674972534,
+      "gamma_nonlinearity": 1.678951621055603
+    },
+    {
+      "parameter_id": "test_0009",
+      "mu": [
+        0.800000011920929,
+        1.0564316511154175,
+        1.8838590383529663
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0564316511154175,
+      "gamma_nonlinearity": 1.8838590383529663
+    },
+    {
+      "parameter_id": "test_0010",
+      "mu": [
+        0.800000011920929,
+        1.0105000734329224,
+        1.378179907798767
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0105000734329224,
+      "gamma_nonlinearity": 1.378179907798767
+    },
+    {
+      "parameter_id": "test_0011",
+      "mu": [
+        0.800000011920929,
+        1.4865410327911377,
+        1.6916369199752808
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4865410327911377,
+      "gamma_nonlinearity": 1.6916369199752808
+    },
+    {
+      "parameter_id": "test_0012",
+      "mu": [
+        0.800000011920929,
+        0.9329249858856201,
+        1.2882282733917236
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.9329249858856201,
+      "gamma_nonlinearity": 1.2882282733917236
+    },
+    {
+      "parameter_id": "test_0013",
+      "mu": [
+        0.800000011920929,
+        1.1984864473342896,
+        1.5877281427383423
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.1984864473342896,
+      "gamma_nonlinearity": 1.5877281427383423
+    },
+    {
+      "parameter_id": "test_0014",
+      "mu": [
+        0.800000011920929,
+        1.3606486320495605,
+        1.027930498123169
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3606486320495605,
+      "gamma_nonlinearity": 1.027930498123169
+    },
+    {
+      "parameter_id": "test_0015",
+      "mu": [
+        0.800000011920929,
+        0.9489036202430725,
+        1.7004549503326416
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.9489036202430725,
+      "gamma_nonlinearity": 1.7004549503326416
+    },
+    {
+      "parameter_id": "test_0016",
+      "mu": [
+        0.800000011920929,
+        0.621492862701416,
+        1.2317774295806885
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.621492862701416,
+      "gamma_nonlinearity": 1.2317774295806885
+    },
+    {
+      "parameter_id": "test_0017",
+      "mu": [
+        0.800000011920929,
+        1.0631736516952515,
+        1.0534076690673828
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0631736516952515,
+      "gamma_nonlinearity": 1.0534076690673828
+    },
+    {
+      "parameter_id": "test_0018",
+      "mu": [
+        0.800000011920929,
+        0.8271269202232361,
+        1.6659153699874878
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.8271269202232361,
+      "gamma_nonlinearity": 1.6659153699874878
+    },
+    {
+      "parameter_id": "test_0019",
+      "mu": [
+        0.800000011920929,
+        0.5320850014686584,
+        1.8554871082305908
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.5320850014686584,
+      "gamma_nonlinearity": 1.8554871082305908
+    },
+    {
+      "parameter_id": "test_0020",
+      "mu": [
+        0.800000011920929,
+        0.5975249409675598,
+        1.3300365209579468
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.5975249409675598,
+      "gamma_nonlinearity": 1.3300365209579468
+    },
+    {
+      "parameter_id": "test_0021",
+      "mu": [
+        0.800000011920929,
+        1.4942532777786255,
+        1.3185933828353882
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4942532777786255,
+      "gamma_nonlinearity": 1.3185933828353882
+    },
+    {
+      "parameter_id": "test_0022",
+      "mu": [
+        0.800000011920929,
+        1.1430778503417969,
+        1.0426936149597168
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.1430778503417969,
+      "gamma_nonlinearity": 1.0426936149597168
+    },
+    {
+      "parameter_id": "test_0023",
+      "mu": [
+        0.800000011920929,
+        0.637942373752594,
+        1.9456291198730469
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.637942373752594,
+      "gamma_nonlinearity": 1.9456291198730469
+    },
+    {
+      "parameter_id": "test_0024",
+      "mu": [
+        0.800000011920929,
+        1.0872783660888672,
+        1.791898488998413
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0872783660888672,
+      "gamma_nonlinearity": 1.791898488998413
+    },
+    {
+      "parameter_id": "test_0025",
+      "mu": [
+        0.800000011920929,
+        1.4092875719070435,
+        1.2550415992736816
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4092875719070435,
+      "gamma_nonlinearity": 1.2550415992736816
+    },
+    {
+      "parameter_id": "test_0026",
+      "mu": [
+        0.800000011920929,
+        1.0901217460632324,
+        1.2486084699630737
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0901217460632324,
+      "gamma_nonlinearity": 1.2486084699630737
+    },
+    {
+      "parameter_id": "test_0027",
+      "mu": [
+        0.800000011920929,
+        1.3188749551773071,
+        1.5599873065948486
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3188749551773071,
+      "gamma_nonlinearity": 1.5599873065948486
+    },
+    {
+      "parameter_id": "test_0028",
+      "mu": [
+        0.800000011920929,
+        0.7588585615158081,
+        1.9582929611206055
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.7588585615158081,
+      "gamma_nonlinearity": 1.9582929611206055
+    },
+    {
+      "parameter_id": "test_0029",
+      "mu": [
+        0.800000011920929,
+        1.189477801322937,
+        1.3496623039245605
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.189477801322937,
+      "gamma_nonlinearity": 1.3496623039245605
+    },
+    {
+      "parameter_id": "test_0030",
+      "mu": [
+        0.800000011920929,
+        0.6569005250930786,
+        1.9914737939834595
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6569005250930786,
+      "gamma_nonlinearity": 1.9914737939834595
+    },
+    {
+      "parameter_id": "test_0031",
+      "mu": [
+        0.800000011920929,
+        0.5270830392837524,
+        1.5730172395706177
+      ],
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.5270830392837524,
+      "gamma_nonlinearity": 1.5730172395706177
+    }
+  ],
+  "stage_parameter_counts": [
+    8,
+    12,
+    16
+  ],
+  "grids_intervals": [
+    5,
+    7,
+    9
+  ],
+  "time_intervals": [
+    5,
+    7,
+    9
+  ],
+  "full_grid_shapes": [
+    [
+      6,
+      6,
+      6
+    ],
+    [
+      8,
+      8,
+      8
+    ],
+    [
+      10,
+      10,
+      10
+    ]
+  ],
+  "stage_training_ids": [
+    [
+      "train_lhs_0000",
+      "train_lhs_0001",
+      "train_lhs_0002",
+      "train_lhs_0003",
+      "train_lhs_0004",
+      "train_lhs_0005",
+      "train_lhs_0006",
+      "train_lhs_0007"
+    ],
+    [
+      "train_lhs_0000",
+      "train_lhs_0001",
+      "train_lhs_0002",
+      "train_lhs_0003",
+      "train_lhs_0004",
+      "train_lhs_0005",
+      "train_lhs_0006",
+      "train_lhs_0007",
+      "train_lhs_0008",
+      "train_lhs_0009",
+      "train_lhs_0010",
+      "train_lhs_0011"
+    ],
+    [
+      "train_lhs_0000",
+      "train_lhs_0001",
+      "train_lhs_0002",
+      "train_lhs_0003",
+      "train_lhs_0004",
+      "train_lhs_0005",
+      "train_lhs_0006",
+      "train_lhs_0007",
+      "train_lhs_0008",
+      "train_lhs_0009",
+      "train_lhs_0010",
+      "train_lhs_0011",
+      "train_lhs_0012",
+      "train_lhs_0013",
+      "train_lhs_0014",
+      "train_lhs_0015"
+    ]
+  ],
+  "evaluation_points_per_parameter": 4096,
+  "coordinate_order": [
+    "t",
+    "x",
+    "y"
+  ],
+  "coordinate_rng_streams": {
+    "validation": 11,
+    "test": 12
+  },
+  "replication": "fixed split and fixed independent evaluation points; multiple training seeds",
+  "test_use": "after final checkpoint selected by validation only",
+  "reference_design_sha256": "7550df5587910f9828d78473457c9733dc44b4b7e6d395de5f11857f417deb38",
+  "training_sampling": {
+    "mode": "lhs",
+    "sampling_seed": 20261014,
+    "margin": 0.001,
+    "nominal_parameter_box": [
+      [
+        0.5,
+        1.5
+      ],
+      [
+        1.0,
+        2.0
+      ]
+    ],
+    "counts": [
+      8,
+      12,
+      16
+    ],
+    "float32_canonicalization": true,
+    "lhs_definition": "boundary-anchored strict nested Latin marginals at n=8,12,16",
+    "candidate_count": 64,
+    "selected_candidate_index": 22,
+    "geometric_selection": "minimize maximum sqrt(n)*covering radius on fixed 41x41 geometric probes; separation/discrepancy tie-breaks",
+    "total_marginal_attempts": 195,
+    "fixed_opposite_corner_anchors": true,
+    "anchors_note": "A deliberately anchored Latin design, not an iid ordinary randomized LHS draw.",
+    "no_loss_or_reference_values_used": true,
+    "geometry": [
+      {
+        "count": 8,
+        "min_pair_distance_unit": 0.1307059176070491,
+        "scaled_separation": 0.36969216272461836,
+        "covering_radius_41x41": 0.3590521606546278,
+        "centered_discrepancy": 0.010877287851855266,
+        "beta_unit_range": [
+          0.0009999871253967285,
+          0.9989999532699585
+        ],
+        "gamma_unit_range": [
+          0.001000046730041504,
+          0.9989999532699585
+        ]
+      },
+      {
+        "count": 12,
+        "min_pair_distance_unit": 0.1307059176070491,
+        "scaled_separation": 0.45277858029064105,
+        "covering_radius_41x41": 0.3096917196255645,
+        "centered_discrepancy": 0.006156614697757412,
+        "beta_unit_range": [
+          0.0009999871253967285,
+          0.9989999532699585
+        ],
+        "gamma_unit_range": [
+          0.001000046730041504,
+          0.9989999532699585
+        ]
+      },
+      {
+        "count": 16,
+        "min_pair_distance_unit": 0.1307059176070491,
+        "scaled_separation": 0.5228236704281964,
+        "covering_radius_41x41": 0.29500958266149585,
+        "centered_discrepancy": 0.003795235055331858,
+        "beta_unit_range": [
+          0.0009999871253967285,
+          0.9989999532699585
+        ],
+        "gamma_unit_range": [
+          0.001000046730041504,
+          0.9989999532699585
+        ]
+      }
+    ],
+    "latin_property_every_stage": true
+  },
+  "design_sha256": "655e97cbd07146ff11d3bfac1b8b241fcbb2a6802986c10c97e8e2169c74af26"
+}

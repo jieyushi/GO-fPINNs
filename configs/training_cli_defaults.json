@@ -1,0 +1,1326 @@
+{
+  "C01": {
+    "training_script": "experiments/forward/C01/train_case1.py",
+    "arguments": {
+      "--experiment-id": {
+        "default": "full/GO_fPINNs"
+      },
+      "--fractional-scheme": {
+        "choices": [
+          "fast_l21",
+          "l21",
+          "l1",
+          "fast_l1"
+        ],
+        "default": "fast_l21"
+      },
+      "--network-activation": {
+        "choices": [
+          "dual_tanh",
+          "tanh"
+        ],
+        "default": "dual_tanh"
+      },
+      "--branch": {
+        "choices": [
+          "coordinate",
+          "operator"
+        ],
+        "default": "coordinate"
+      },
+      "--use-gradient": {
+        "choices": [
+          0,
+          1
+        ],
+        "default": 1
+      },
+      "--use-attention": {
+        "choices": [
+          0,
+          1
+        ],
+        "default": 1
+      },
+      "--use-consistency": {
+        "choices": [
+          0,
+          1
+        ],
+        "default": 1
+      },
+      "--weight-scheme": {
+        "choices": {
+          "expression": "SCHEMES"
+        },
+        "default": {
+          "expression": "default_scheme or 'softmax_noise'"
+        }
+      },
+      "--variant": {
+        "choices": [
+          "full_original"
+        ],
+        "default": "full_original",
+        "help": "Non-ablation adapter. Choose flags/schemes here; original ablations use legacy_ablation/."
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--device": {
+        "default": {
+          "expression": "'cuda' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--output": {
+        "required": true
+      },
+      "--budget-mode": {
+        "choices": [
+          "original_stop"
+        ],
+        "default": "original_stop"
+      },
+      "--grids": {
+        "default": [
+          [
+            10,
+            10
+          ],
+          [
+            20,
+            20
+          ],
+          [
+            30,
+            30
+          ],
+          [
+            40,
+            40
+          ],
+          [
+            50,
+            50
+          ]
+        ]
+      },
+      "--width": {
+        "default": 60
+      },
+      "--extra-hidden-layers": {
+        "default": 2
+      },
+      "--alpha": {
+        "default": 0.9
+      },
+      "--initial-lr": {
+        "default": 0.001
+      },
+      "--w-grad": {
+        "default": 0.001
+      },
+      "--eval-every": {
+        "default": 100
+      },
+      "--eval-points": {
+        "default": 4096
+      },
+      "--validation-seed": {
+        "default": 98101
+      },
+      "--test-seed": {
+        "default": 98102
+      },
+      "--kernel-mode": {
+        "choices": [
+          "original",
+          "stable64"
+        ],
+        "default": "original"
+      },
+      "--network-dtype": {
+        "choices": [
+          "float32",
+          "float64"
+        ],
+        "default": "float32"
+      },
+      "--shared-update": {
+        "choices": [
+          "legacy_double",
+          "once"
+        ],
+        "default": "legacy_double"
+      },
+      "--noise-amplitude": {
+        "default": 0.05
+      },
+      "--weight-lower-bound": {
+        "default": 1e-06
+      },
+      "--weight-floor": {
+        "default": 0.2
+      },
+      "--patience-evals": {
+        "default": 10
+      },
+      "--tol": {
+        "default": 0.0,
+        "help": "Absolute improvement over the stage best; zero means any strict decrease. No relative criterion."
+      },
+      "--safety-stage-cap": {
+        "dest": "safety_stage_cap",
+        "default": 0,
+        "help": "Optional cap for original_stop only; zero retains the original uncapped rule."
+      },
+      "--checkpoint-every": {
+        "default": 100
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--resume": {
+        "action": "store_true"
+      },
+      "--smoke": {
+        "action": "store_true"
+      }
+    }
+  },
+  "C02": {
+    "training_script": "experiments/forward/C02/train_largescale.py",
+    "arguments": {
+      "--method": {
+        "choices": [
+          "go",
+          "fpinn",
+          "fl1"
+        ],
+        "default": "go"
+      },
+      "--device": {
+        "default": {
+          "expression": "'cuda:0' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--output": {
+        "default": null
+      },
+      "--width": {
+        "default": 60
+      },
+      "--extra-hidden-layers": {
+        "default": 2,
+        "help": "C01 convention: one input hidden block plus this many blocks."
+      },
+      "--network-dtype": {
+        "choices": [
+          "float32",
+          "float64"
+        ],
+        "default": "float32"
+      },
+      "--kernel-mode": {
+        "choices": [
+          "original",
+          "stable64"
+        ],
+        "default": "original"
+      },
+      "--shared-update": {
+        "choices": [
+          "legacy_double",
+          "once"
+        ],
+        "default": "legacy_double"
+      },
+      "--w-grad": {
+        "default": 0.001,
+        "help": "GO full discrete residual x-gradient and sigma-time differences; weight=w_grad*exp(-3*LF.detach()); 0 disables GE. Baselines always disable GE."
+      },
+      "--noise-amplitude": {
+        "default": 0.05,
+        "help": "Adaptive loss-weight perturbation, NOT observation noise."
+      },
+      "--weight-lower-bound": {
+        "default": 1e-06
+      },
+      "--interface-weight": {
+        "default": 1.0
+      },
+      "--interface-points": {
+        "default": 101,
+        "help": "Fixed times including 0 and 1 on EACH current interface."
+      },
+      "--eval-every": {
+        "default": 100
+      },
+      "--patience-evals": {
+        "default": 10
+      },
+      "--max-epochs-per-stage": {
+        "default": 0,
+        "help": "0 retains C01 uncapped loss-patience stopping; positive adds an explicit safety cap."
+      },
+      "--checkpoint-every": {
+        "default": 100
+      },
+      "--eval-points": {
+        "default": 4096
+      },
+      "--validation-spatial-sites": {
+        "default": 32
+      },
+      "--validation-time-intervals": {
+        "default": 50
+      },
+      "--validation-seed": {
+        "default": 98101
+      },
+      "--test-seed": {
+        "default": 98102
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--resume": {
+        "action": "store_true"
+      },
+      "--smoke": {
+        "action": "store_true"
+      }
+    }
+  },
+  "C03": {
+    "training_script": "experiments/forward/C03/train_longtime.py",
+    "arguments": {
+      "--device": {
+        "default": {
+          "expression": "'cuda:0' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--output": {
+        "default": null
+      },
+      "--width": {
+        "default": 60
+      },
+      "--extra-hidden-layers": {
+        "default": 2,
+        "help": "One input hidden block plus two additional hidden blocks."
+      },
+      "--network-dtype": {
+        "choices": [
+          "float64",
+          "float32"
+        ],
+        "default": "float64"
+      },
+      "--shared-update": {
+        "choices": [
+          "legacy_double",
+          "once"
+        ],
+        "default": "legacy_double"
+      },
+      "--history-mode": {
+        "choices": [
+          "fft",
+          "stream",
+          "direct"
+        ],
+        "default": "fft"
+      },
+      "--soe-eps": {
+        "default": 1e-10
+      },
+      "--potential-sign": {
+        "choices": [
+          1,
+          -1
+        ],
+        "default": 1
+      },
+      "--w-grad": {
+        "default": 0.001
+      },
+      "--noise-amplitude": {
+        "default": 0.05,
+        "help": "Loss-weight perturbation; no observation noise."
+      },
+      "--weight-lower-bound": {
+        "default": 0.2,
+        "help": "Explicit positive floor prevents learned weights from discarding PDE or boundaries."
+      },
+      "--continuity-weight": {
+        "default": 1.0
+      },
+      "--interface-points": {
+        "default": 51
+      },
+      "--boundary-points": {
+        "default": 128,
+        "help": "Points on EACH physical spatial boundary in the active window."
+      },
+      "--spatial-batch": {
+        "default": null,
+        "help": "Auto: 7 on CUDA, 1 on CPU. 0 = all x; every batch retains FULL history."
+      },
+      "--eval-every": {
+        "default": 100
+      },
+      "--patience-evals": {
+        "default": 10
+      },
+      "--max-epochs-per-window": {
+        "default": 5000,
+        "help": "Per active model/window cap; 0 disables this cap. Global stage has one window."
+      },
+      "--checkpoint-every": {
+        "default": 100
+      },
+      "--eval-points": {
+        "default": 4096
+      },
+      "--validation-seed": {
+        "default": 98401
+      },
+      "--test-seed": {
+        "default": 98402
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--resume": {
+        "action": "store_true"
+      },
+      "--smoke": {
+        "action": "store_true"
+      }
+    }
+  },
+  "I01": {
+    "training_script": "experiments/inverse/I01/train_inverse.py",
+    "arguments": {
+      "--method": {
+        "choices": {
+          "expression": "METHODS"
+        },
+        "default": "go_multi"
+      },
+      "--unknown": {
+        "choices": [
+          "alpha",
+          "beta",
+          "gamma",
+          "joint"
+        ],
+        "default": "alpha"
+      },
+      "--initial": {
+        "default": null,
+        "help": "Single value, or alpha,beta,gamma for joint."
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--data-seed": {
+        "default": 77123
+      },
+      "--output": {
+        "default": null
+      },
+      "--resume": {
+        "action": "store_true"
+      },
+      "--device": {
+        "default": {
+          "expression": "'cuda:0' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--width": {
+        "default": 60
+      },
+      "--extra-hidden-layers": {
+        "default": 3
+      },
+      "--network-dtype": {
+        "choices": [
+          "float32",
+          "float64"
+        ],
+        "default": "float32"
+      },
+      "--shared-update": {
+        "choices": [
+          "legacy_double",
+          "once"
+        ],
+        "default": "legacy_double"
+      },
+      "--physical-lr-scale": {
+        "default": 1.0
+      },
+      "--freeze-hypernet": {
+        "action": "store_true",
+        "help": "Explicit source-script comparison: do not optimize the weighting MLP."
+      },
+      "--w-grad": {
+        "default": 0.001
+      },
+      "--gradient-mode": {
+        "choices": [
+          "script",
+          "x",
+          "xt",
+          "none"
+        ],
+        "default": "script",
+        "help": "Default script=xt: local GE in x+t for alpha/beta/gamma/joint; x is the explicit spatial-only comparison; none disables GE. FL1 always disables GE."
+      },
+      "--consistency-mode": {
+        "choices": [
+          "rolling",
+          "frozen",
+          "none"
+        ],
+        "default": "frozen"
+      },
+      "--noise-level": {
+        "default": 0.0,
+        "help": "Relative Gaussian noise on terminal complex observations only."
+      },
+      "--condition-points": {
+        "default": 100
+      },
+      "--history-rule": {
+        "choices": [
+          "soe",
+          "direct"
+        ],
+        "default": "soe"
+      },
+      "--history-evaluation": {
+        "choices": [
+          "fft",
+          "stream"
+        ],
+        "default": "fft"
+      },
+      "--quad-order": {
+        "default": 8
+      },
+      "--panel-width": {
+        "default": 1.0
+      },
+      "--low-tail": {
+        "default": 1e-06
+      },
+      "--alpha-min": {
+        "default": 0.0001
+      },
+      "--alpha-max": {
+        "default": {
+          "expression": "1 - 0.0001"
+        }
+      },
+      "--spatial-batch": {
+        "default": null,
+        "help": "0=full batch; default CUDA 0, CPU 7; complete history in every spatial batch."
+      },
+      "--max-epochs-per-stage": {
+        "default": 10000
+      },
+      "--eval-every": {
+        "default": 100
+      },
+      "--patience-evals": {
+        "default": 10
+      },
+      "--checkpoint-every": {
+        "default": 100
+      },
+      "--reference-points": {
+        "default": 4096
+      },
+      "--reference-seed": {
+        "default": 77201
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--smoke": {
+        "action": "store_true"
+      }
+    }
+  },
+  "I02": {
+    "training_script": "experiments/inverse/I02/train_potential.py",
+    "arguments": {
+      "--method": {
+        "choices": {
+          "expression": "METHODS"
+        },
+        "default": "go_multi"
+      },
+      "--problem": {
+        "choices": {
+          "expression": "PROBLEMS"
+        },
+        "default": "manufactured_series"
+      },
+      "--supervised-points": {
+        "choices": [
+          2,
+          3
+        ],
+        "default": 3
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--data-seed": {
+        "default": 77123
+      },
+      "--output": {
+        "default": null
+      },
+      "--resume": {
+        "action": "store_true"
+      },
+      "--device": {
+        "default": {
+          "expression": "'cuda:0' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--width": {
+        "default": 60
+      },
+      "--extra-hidden-layers": {
+        "default": 3
+      },
+      "--network-dtype": {
+        "choices": [
+          "float32",
+          "float64"
+        ],
+        "default": "float32"
+      },
+      "--freeze-hypernet": {
+        "action": "store_true"
+      },
+      "--observation-weight": {
+        "default": 0.1
+      },
+      "--eta-weight": {
+        "default": 1.0
+      },
+      "--w-grad": {
+        "default": 0.001,
+        "help": "GO base GE weight (active weight = w_grad*exp(-3*detached loss_f)); both source modes: full discrete residual x including -f_x and sigma-time FD including -f. FL1 always disables GE."
+      },
+      "--consistency-mode": {
+        "choices": [
+          "frozen",
+          "rolling",
+          "none"
+        ],
+        "default": "frozen"
+      },
+      "--condition-points": {
+        "default": 100
+      },
+      "--noise-level": {
+        "default": 0.0,
+        "help": "Noise on terminal field observations only; eta supervision remains exact."
+      },
+      "--history-rule": {
+        "choices": [
+          "soe",
+          "direct"
+        ],
+        "default": "soe"
+      },
+      "--history-evaluation": {
+        "choices": [
+          "fft",
+          "stream"
+        ],
+        "default": "fft"
+      },
+      "--quad-order": {
+        "default": 8
+      },
+      "--panel-width": {
+        "default": 1.0
+      },
+      "--low-tail": {
+        "default": 1e-06
+      },
+      "--spatial-batch": {
+        "default": null
+      },
+      "--max-epochs-per-stage": {
+        "default": 10000
+      },
+      "--eval-every": {
+        "default": 100
+      },
+      "--patience-evals": {
+        "default": 10
+      },
+      "--checkpoint-every": {
+        "default": 100
+      },
+      "--reference": {
+        "default": "runs/I02/reference_zero_source_256x1024.npz",
+        "help": "Used only with --problem zero_source; manufactured_series generates analytic observations directly."
+      },
+      "--reference-nx": {
+        "default": 256
+      },
+      "--reference-nt": {
+        "default": 1024
+      },
+      "--reference-points": {
+        "default": 512
+      },
+      "--reference-seed": {
+        "default": 77201
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--smoke": {
+        "action": "store_true"
+      }
+    }
+  },
+  "I03": {
+    "training_script": "experiments/inverse/I03/train_potential2d.py",
+    "arguments": {
+      "--method": {
+        "choices": {
+          "expression": "METHODS"
+        },
+        "default": "go_multi"
+      },
+      "--supervised-points": {
+        "choices": [
+          4,
+          9
+        ],
+        "default": 9
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--data-seed": {
+        "default": 77123
+      },
+      "--output": {
+        "default": null
+      },
+      "--resume": {
+        "action": "store_true"
+      },
+      "--device": {
+        "default": {
+          "expression": "'cuda:0' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--width": {
+        "default": 60
+      },
+      "--extra-hidden-layers": {
+        "default": 3
+      },
+      "--network-dtype": {
+        "choices": [
+          "float32",
+          "float64"
+        ],
+        "default": "float32"
+      },
+      "--freeze-hypernet": {
+        "action": "store_true"
+      },
+      "--activation-initial": {
+        "default": 0.1
+      },
+      "--activation-scale": {
+        "default": 10.0
+      },
+      "--activation-lr-ratio": {
+        "default": 0.1
+      },
+      "--hyper-lr-ratio": {
+        "default": 1.0
+      },
+      "--matmul-precision": {
+        "choices": [
+          "highest",
+          "high",
+          "medium"
+        ],
+        "default": "high"
+      },
+      "--eta-weight": {
+        "default": 1.0
+      },
+      "--w-grad": {
+        "default": 0.001,
+        "help": "GO base GE weight (active weight = w_grad*exp(-3*detached loss_f)); matches local minus fixed true-local derivatives in x, y and t, excluding the Caputo forcing part. FL1 always disables GE."
+      },
+      "--consistency-mode": {
+        "choices": [
+          "frozen",
+          "rolling",
+          "none"
+        ],
+        "default": "frozen"
+      },
+      "--condition-points": {
+        "default": 100
+      },
+      "--noise-level": {
+        "default": 0.0,
+        "help": "Noise on terminal field observations only; eta supervision remains exact."
+      },
+      "--history-rule": {
+        "choices": [
+          "soe",
+          "direct"
+        ],
+        "default": "soe"
+      },
+      "--history-evaluation": {
+        "choices": [
+          "fft",
+          "stream"
+        ],
+        "default": "fft"
+      },
+      "--quad-order": {
+        "default": 8
+      },
+      "--panel-width": {
+        "default": 1.0
+      },
+      "--low-tail": {
+        "default": 1e-06
+      },
+      "--spatial-batch": {
+        "default": null
+      },
+      "--max-epochs-per-stage": {
+        "default": 10000
+      },
+      "--eval-every": {
+        "default": 100
+      },
+      "--patience-evals": {
+        "default": 10
+      },
+      "--checkpoint-every": {
+        "default": 100
+      },
+      "--eta-eval-nodes": {
+        "default": 101
+      },
+      "--reference-points": {
+        "default": 4096
+      },
+      "--reference-seed": {
+        "default": 77201
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--smoke": {
+        "action": "store_true"
+      }
+    }
+  },
+  "OP1": {
+    "training_script": "experiments/operator/case1/train_single_operator.py",
+    "arguments": {
+      "--operator": {
+        "choices": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "default": "alpha",
+        "help": "Only this paper parameter varies; the other two stay fixed."
+      },
+      "--device": {
+        "default": {
+          "expression": "'cuda' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--output": {
+        "default": null
+      },
+      "--budget-mode": {
+        "choices": [
+          "early_stop"
+        ],
+        "default": "early_stop"
+      },
+      "--epochs-per-stage": {
+        "default": 5000,
+        "help": "Maximum epochs in each stage; must be <=5000. Not a fixed update budget."
+      },
+      "--stage-epochs": {
+        "default": null
+      },
+      "--grids": {
+        "default": "5,7,9",
+        "help": "Intervals per axis at S0/S1/S2. 5,7,9 gives full grids of 6^3,8^3,10^3 points including endpoints."
+      },
+      "--boundary-points": {
+        "default": "80,120,150"
+      },
+      "--split-seed": {
+        "default": 20261017,
+        "help": "Independent validation/test streams; fixed across training seeds and methods."
+      },
+      "--parameter-counts": {
+        "default": "4,5,6",
+        "help": "Nested active parameter values."
+      },
+      "--validation-count": {
+        "default": 6
+      },
+      "--test-count": {
+        "default": 30
+      },
+      "--width": {
+        "default": 60
+      },
+      "--hidden-layers": {
+        "default": 5
+      },
+      "--latent-dim": {
+        "default": 16
+      },
+      "--initial-lr": {
+        "default": 0.001
+      },
+      "--stage-lr-factors": {
+        "default": "1,0.5,0.25",
+        "help": "Three fixed stage LR multipliers; paper default gives 0.001,0.0005,0.00025."
+      },
+      "--w-grad": {
+        "default": 0.0001
+      },
+      "--noise-amplitude": {
+        "default": 0.05
+      },
+      "--weight-lower-bound": {
+        "default": 1e-06
+      },
+      "--warmup-epochs": {
+        "default": 0,
+        "help": "Must be zero for the stated stage learning rates."
+      },
+      "--warmup-start-factor": {
+        "default": 0.02
+      },
+      "--consistency-initial": {
+        "default": 0.1
+      },
+      "--consistency-decay": {
+        "default": 300.0
+      },
+      "--consistency-cutoff": {
+        "default": 0.01
+      },
+      "--eval-every": {
+        "default": 100
+      },
+      "--patience-evals": {
+        "default": 10,
+        "help": "Consecutive checks without a strictly lower best validation physical loss. No relative tolerance."
+      },
+      "--eval-points": {
+        "default": 4096
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--resume": {
+        "action": "store_true",
+        "help": "Restore the identical Case 1 configuration, Adam, teacher, stopping counter and RNG."
+      },
+      "--smoke": {
+        "action": "store_true"
+      }
+    }
+  },
+  "OP2": {
+    "training_script": "experiments/operator/case2/train_joint_operator.py",
+    "arguments": {
+      "--device": {
+        "default": {
+          "expression": "'cuda' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--output": {
+        "default": null
+      },
+      "--budget-mode": {
+        "choices": [
+          "early_stop"
+        ],
+        "default": "early_stop"
+      },
+      "--epochs-per-stage": {
+        "default": 10000,
+        "help": "Maximum epochs in each stage; must be <=10000. This is not a fixed update budget."
+      },
+      "--stage-epochs": {
+        "default": null
+      },
+      "--grids": {
+        "default": "5,7,9",
+        "help": "Intervals per axis at S0/S1/S2. 5,7,9 gives full grids of 6^3,8^3,10^3 points including endpoints."
+      },
+      "--boundary-points": {
+        "default": "80,120,150"
+      },
+      "--split-seed": {
+        "default": 20261011,
+        "help": "Fixed independent streams for train/validation/test triples and coordinates."
+      },
+      "--parameter-counts": {
+        "default": "16,24,32",
+        "help": "Nested training triples, NOT a tensor product."
+      },
+      "--validation-count": {
+        "default": 32
+      },
+      "--test-count": {
+        "default": 128
+      },
+      "--width": {
+        "default": 60
+      },
+      "--hidden-layers": {
+        "default": 5
+      },
+      "--latent-dim": {
+        "default": 16
+      },
+      "--initial-lr": {
+        "default": 0.001
+      },
+      "--stage-lr-factors": {
+        "default": "1,0.5,0.25",
+        "help": "Three fixed stage LR multipliers; paper default gives 0.001,0.0005,0.00025."
+      },
+      "--w-grad": {
+        "default": 0.0001
+      },
+      "--noise-amplitude": {
+        "default": 0.05
+      },
+      "--weight-lower-bound": {
+        "default": 1e-06
+      },
+      "--warmup-epochs": {
+        "default": 0,
+        "help": "Must be zero for the stated stage learning rates."
+      },
+      "--warmup-start-factor": {
+        "default": 0.02
+      },
+      "--consistency-initial": {
+        "default": 0.1
+      },
+      "--consistency-decay": {
+        "default": 300.0
+      },
+      "--consistency-cutoff": {
+        "default": 0.01
+      },
+      "--eval-every": {
+        "default": 100
+      },
+      "--patience-evals": {
+        "default": 10,
+        "help": "Consecutive checks without a strictly lower best validation physical loss. No relative tolerance."
+      },
+      "--eval-points": {
+        "default": 4096
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--resume": {
+        "action": "store_true",
+        "help": "Restore this v6 resume.pt, including stage weight policy, Adam, scheduler, teacher and RNG."
+      },
+      "--smoke": {
+        "action": "store_true"
+      }
+    }
+  },
+  "OP3": {
+    "training_script": "experiments/operator/case3/train_sampling.py",
+    "arguments": {
+      "--references": {
+        "default": {
+          "expression": "str(Path(__file__).resolve().parent / 'references/fixed_beta_gamma')"
+        }
+      },
+      "--sampling-mode": {
+        "choices": [
+          "grid",
+          "lhs"
+        ],
+        "default": "lhs"
+      },
+      "--sampling-seed": {
+        "default": 20261014
+      },
+      "--parameter-margin": {
+        "default": 0.001
+      },
+      "--lhs-candidates": {
+        "default": 64
+      },
+      "--device": {
+        "default": {
+          "expression": "'cuda' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--output": {
+        "default": null
+      },
+      "--epochs-per-stage": {
+        "default": 5000
+      },
+      "--eval-every": {
+        "default": 100
+      },
+      "--patience-evals": {
+        "default": 10
+      },
+      "--boundary-points": {
+        "default": [
+          80,
+          120,
+          150
+        ]
+      },
+      "--width": {
+        "default": 60
+      },
+      "--hidden-layers": {
+        "default": 5
+      },
+      "--latent-dim": {
+        "default": 16
+      },
+      "--initial-lr": {
+        "default": 0.001
+      },
+      "--w-grad": {
+        "default": 0.0001
+      },
+      "--noise-amplitude": {
+        "default": 0.05
+      },
+      "--weight-lower-bound": {
+        "default": 0.2,
+        "help": "Positive floor for the fixed nonzero IC problem; avoids collapse of the initial-condition weight."
+      },
+      "--warmup-epochs": {
+        "default": 0
+      },
+      "--warmup-start-factor": {
+        "default": 0.02
+      },
+      "--consistency-initial": {
+        "default": 0.1
+      },
+      "--consistency-decay": {
+        "default": 300.0
+      },
+      "--consistency-cutoff": {
+        "default": 0.01
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--inference-repeats": {
+        "default": 10
+      },
+      "--resume": {
+        "action": "store_true"
+      },
+      "--smoke": {
+        "action": "store_true",
+        "help": "Three updates/stage and a small network; requires separately prepared small reference design for a fast check."
+      }
+    }
+  },
+  "OP4": {
+    "training_script": "experiments/operator/case4/train_bright_hump.py",
+    "arguments": {
+      "--cache": {
+        "default": "references/bright_hump_cache_earlystop_nt512"
+      },
+      "--device": {
+        "default": {
+          "expression": "'cuda' if torch.cuda.is_available() else 'cpu'"
+        }
+      },
+      "--seed": {
+        "default": 1234
+      },
+      "--output": {
+        "default": null
+      },
+      "--budget-mode": {
+        "choices": [
+          "early_stop"
+        ],
+        "default": "early_stop"
+      },
+      "--epochs-per-stage": {
+        "default": 5000,
+        "help": "Maximum updates in EACH stage, never more than 5000; not a fixed budget."
+      },
+      "--stage-epochs": {
+        "default": null,
+        "help": "Optional five smaller caps for verification; each must be <=5000."
+      },
+      "--eval-every": {
+        "default": 100,
+        "help": "Check deterministic validation physics every this many updates and at the cap."
+      },
+      "--patience-evals": {
+        "default": 10,
+        "help": "Stop after this many checks without a new historical minimum; min_delta=0."
+      },
+      "--width": {
+        "default": 60
+      },
+      "--hidden-layers": {
+        "default": 5
+      },
+      "--latent-dim": {
+        "default": 16
+      },
+      "--spatial-scale": {
+        "default": 4.0
+      },
+      "--initial-lr": {
+        "default": 0.001
+      },
+      "--stage-lr-factors": {
+        "default": {
+          "expression": "[1.0] * 5"
+        },
+        "help": "Compatibility option: must be 1,1,1,1,1 for the paper setting."
+      },
+      "--w-grad": {
+        "default": 0.0001
+      },
+      "--noise-amplitude": {
+        "default": 0.05
+      },
+      "--weight-lower-bound": {
+        "default": 0.2,
+        "help": "Same Softmax-noise formula, positive floor for the nonzero-IC, zero-source problem."
+      },
+      "--ic-normalization": {
+        "choices": [
+          "relative_energy",
+          "mean"
+        ],
+        "default": "relative_energy"
+      },
+      "--history-initialization": {
+        "choices": [
+          "prescribed",
+          "network"
+        ],
+        "default": "prescribed",
+        "help": "Use the GIVEN sech profile in the first history slot; network is the legacy soft-only alternative."
+      },
+      "--ic-points": {
+        "default": [
+          128,
+          192,
+          256,
+          384,
+          512
+        ]
+      },
+      "--boundary-points": {
+        "default": [
+          80,
+          120,
+          150,
+          180,
+          220
+        ]
+      },
+      "--spatial-batch-rows": {
+        "default": 64
+      },
+      "--prediction-batch-points": {
+        "default": 8192
+      },
+      "--warmup-epochs": {
+        "default": 0,
+        "help": "Compatibility option: must be zero; the paper uses a constant LR."
+      },
+      "--warmup-start-factor": {
+        "default": 0.02
+      },
+      "--consistency-initial": {
+        "default": 0.1
+      },
+      "--consistency-decay": {
+        "default": 300.0
+      },
+      "--consistency-cutoff": {
+        "default": 0.01
+      },
+      "--threads": {
+        "default": 1
+      },
+      "--inference-repeats": {
+        "default": 5
+      },
+      "--resume": {
+        "action": "store_true"
+      },
+      "--smoke": {
+        "action": "store_true",
+        "help": "Two updates per stage, small network; use a small separate ADI cache for fast checks."
+      }
+    }
+  }
+}

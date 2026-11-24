@@ -1,0 +1,55 @@
+{
+  "grid_intervals": [
+    [
+      10,
+      10
+    ],
+    [
+      20,
+      20
+    ],
+    [
+      30,
+      30
+    ],
+    [
+      40,
+      40
+    ],
+    [
+      50,
+      50
+    ]
+  ],
+  "stage_learning_rates": [
+    0.001,
+    0.0005,
+    0.00025,
+    0.000125,
+    6.25e-05
+  ],
+  "width": 60,
+  "extra_hidden_layers": 2,
+  "hidden_layers_total": 3,
+  "training_seeds": [
+    1234,
+    2024,
+    3407
+  ],
+  "evaluation_points": 4096,
+  "validation_seed": 98101,
+  "test_seed": 98102,
+  "standard_stopping": {
+    "monitor": "fixed validation physical loss",
+    "check_every": 100,
+    "patience_checks": 10,
+    "minimum_decrease": 0,
+    "default_extra_cap": 0
+  },
+  "controlled_ablation": {
+    "updates_per_stage": 2000,
+    "stages": 5,
+    "total_updates": 10000
+  },
+  "protocol_module": "experiment_plan.py"
+}

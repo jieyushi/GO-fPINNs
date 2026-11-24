@@ -1,0 +1,193 @@
+{
+  "methods": {
+    "go": [
+      {
+        "stage": 0,
+        "phase": "global_refinement",
+        "parts": 1,
+        "M": 50,
+        "N": 50,
+        "lr": 0.005,
+        "domains": [
+          [
+            -9.42477796076938,
+            9.42477796076938
+          ]
+        ],
+        "interfaces": [],
+        "parents": [
+          0
+        ]
+      },
+      {
+        "stage": 1,
+        "phase": "global_refinement",
+        "parts": 1,
+        "M": 100,
+        "N": 50,
+        "lr": 0.0025,
+        "domains": [
+          [
+            -9.42477796076938,
+            9.42477796076938
+          ]
+        ],
+        "interfaces": [],
+        "parents": [
+          0
+        ]
+      },
+      {
+        "stage": 2,
+        "phase": "global_refinement",
+        "parts": 1,
+        "M": 200,
+        "N": 50,
+        "lr": 0.00125,
+        "domains": [
+          [
+            -9.42477796076938,
+            9.42477796076938
+          ]
+        ],
+        "interfaces": [],
+        "parents": [
+          0
+        ]
+      },
+      {
+        "stage": 3,
+        "phase": "spatial_decomposition",
+        "parts": 2,
+        "M": 100,
+        "N": 50,
+        "lr": 0.000625,
+        "domains": [
+          [
+            -9.42477796076938,
+            0.0
+          ],
+          [
+            0.0,
+            9.42477796076938
+          ]
+        ],
+        "interfaces": [
+          0.0
+        ],
+        "parents": [
+          0,
+          0
+        ]
+      },
+      {
+        "stage": 4,
+        "phase": "spatial_decomposition",
+        "parts": 4,
+        "M": 50,
+        "N": 50,
+        "lr": 0.000625,
+        "domains": [
+          [
+            -9.42477796076938,
+            -4.71238898038469
+          ],
+          [
+            -4.71238898038469,
+            0.0
+          ],
+          [
+            0.0,
+            4.71238898038469
+          ],
+          [
+            4.71238898038469,
+            9.42477796076938
+          ]
+        ],
+        "interfaces": [
+          -4.71238898038469,
+          0.0,
+          4.71238898038469
+        ],
+        "parents": [
+          0,
+          0,
+          1,
+          1
+        ]
+      }
+    ],
+    "fpinn": [
+      {
+        "stage": 0,
+        "phase": "single_global",
+        "parts": 1,
+        "M": 200,
+        "N": 50,
+        "lr": 0.001,
+        "domains": [
+          [
+            -9.42477796076938,
+            9.42477796076938
+          ]
+        ],
+        "interfaces": [],
+        "parents": [
+          0
+        ]
+      }
+    ],
+    "fl1": [
+      {
+        "stage": 0,
+        "phase": "single_global",
+        "parts": 1,
+        "M": 200,
+        "N": 50,
+        "lr": 0.001,
+        "domains": [
+          [
+            -9.42477796076938,
+            9.42477796076938
+          ]
+        ],
+        "interfaces": [],
+        "parents": [
+          0
+        ]
+      }
+    ]
+  },
+  "default_output_root": "runs/C02_gradient_v2",
+  "default_smoke_output_root": "scratch_runs/C02_gradient_v2_smoke",
+  "alpha": 0.9,
+  "beta": 0.5,
+  "gamma": 1.0,
+  "source": "(|E_alpha(i*t^alpha/2)|^2-1)*exp(i*x)*E_alpha(i*t^alpha/2)",
+  "potential": 0.0,
+  "early_stop": {
+    "check_every": 100,
+    "patience": 10,
+    "default_extra_epoch_cap": 0,
+    "monitor": "fixed validation physical loss"
+  },
+  "independent_validation_and_test_points": 4096,
+  "interface_times": 101,
+  "interface_weight": 1.0,
+  "gradient_enhancement": {
+    "operator": "full discrete manufactured-source PDE residual",
+    "spatial": "g_u=-H(v_x)+d_x N_u-f_R,x; g_v=H(u_x)+d_x N_v-f_I,x; f_x=i*f",
+    "coordinate_graph": "independent differentiable nodal and sigma leaves",
+    "temporal": "complete sigma residual sequence; actual N time axis; centered inside, one-sided endpoints; spacing tau=1/N",
+    "default_w_grad": 0.001,
+    "dynamic_weight": "w_grad*exp(-3*loss_f.detach())",
+    "baselines": "fpinn and fl1 gradient enhancement disabled",
+    "spatial_part_weighting": "existing volume weights preserved"
+  },
+  "source_model": "C02_manufactured_MittagLeffler_v1",
+  "reference": "analytic manufactured Mittag-Leffler field; optional numerical solve of the same forced PDE",
+  "width": 60,
+  "extra_hidden_layers": 2,
+  "hidden_layers_total": 3
+}

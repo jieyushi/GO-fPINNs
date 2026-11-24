@@ -1,0 +1,337 @@
+{
+  "args": {
+    "device": "cuda:0",
+    "seed": 1234,
+    "output": "runs/C03/seed_1234",
+    "width": 60,
+    "extra_hidden_layers": 2,
+    "network_dtype": "float64",
+    "shared_update": "legacy_double",
+    "history_mode": "fft",
+    "soe_eps": 1e-10,
+    "potential_sign": 1,
+    "w_grad": 0.001,
+    "noise_amplitude": 0.05,
+    "weight_lower_bound": 0.2,
+    "continuity_weight": 1.0,
+    "interface_points": 51,
+    "boundary_points": 128,
+    "spatial_batch": 7,
+    "eval_every": 100,
+    "patience_evals": 10,
+    "max_epochs_per_window": 5000,
+    "checkpoint_every": 100,
+    "eval_points": 4096,
+    "validation_seed": 98401,
+    "test_seed": 98402,
+    "threads": 1,
+    "resume": false,
+    "smoke": false
+  },
+  "plan": [
+    {
+      "stage": 0,
+      "phase": "temporal_refinement",
+      "parts": 1,
+      "M": 50,
+      "N": 50,
+      "total_N": 50,
+      "tau": 2.0,
+      "lr": 0.005,
+      "windows": [
+        [
+          0.0,
+          100.0
+        ]
+      ],
+      "parents": [
+        0
+      ]
+    },
+    {
+      "stage": 1,
+      "phase": "temporal_refinement",
+      "parts": 1,
+      "M": 50,
+      "N": 100,
+      "total_N": 100,
+      "tau": 1.0,
+      "lr": 0.0025,
+      "windows": [
+        [
+          0.0,
+          100.0
+        ]
+      ],
+      "parents": [
+        0
+      ]
+    },
+    {
+      "stage": 2,
+      "phase": "temporal_refinement",
+      "parts": 1,
+      "M": 50,
+      "N": 200,
+      "total_N": 200,
+      "tau": 0.5,
+      "lr": 0.00125,
+      "windows": [
+        [
+          0.0,
+          100.0
+        ]
+      ],
+      "parents": [
+        0
+      ]
+    },
+    {
+      "stage": 3,
+      "phase": "temporal_refinement",
+      "parts": 1,
+      "M": 50,
+      "N": 400,
+      "total_N": 400,
+      "tau": 0.25,
+      "lr": 0.000625,
+      "windows": [
+        [
+          0.0,
+          100.0
+        ]
+      ],
+      "parents": [
+        0
+      ]
+    },
+    {
+      "stage": 4,
+      "phase": "temporal_refinement",
+      "parts": 1,
+      "M": 50,
+      "N": 800,
+      "total_N": 800,
+      "tau": 0.125,
+      "lr": 0.0003125,
+      "windows": [
+        [
+          0.0,
+          100.0
+        ]
+      ],
+      "parents": [
+        0
+      ]
+    },
+    {
+      "stage": 5,
+      "phase": "time_windows",
+      "parts": 2,
+      "M": 50,
+      "N": 400,
+      "total_N": 800,
+      "tau": 0.125,
+      "lr": 0.0001,
+      "windows": [
+        [
+          0.0,
+          50.0
+        ],
+        [
+          50.0,
+          100.0
+        ]
+      ],
+      "parents": [
+        0,
+        0
+      ]
+    },
+    {
+      "stage": 6,
+      "phase": "time_windows",
+      "parts": 4,
+      "M": 50,
+      "N": 200,
+      "total_N": 800,
+      "tau": 0.125,
+      "lr": 0.0001,
+      "windows": [
+        [
+          0.0,
+          25.0
+        ],
+        [
+          25.0,
+          50.0
+        ],
+        [
+          50.0,
+          75.0
+        ],
+        [
+          75.0,
+          100.0
+        ]
+      ],
+      "parents": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 7,
+      "phase": "time_windows",
+      "parts": 8,
+      "M": 50,
+      "N": 100,
+      "total_N": 800,
+      "tau": 0.125,
+      "lr": 0.0001,
+      "windows": [
+        [
+          0.0,
+          12.5
+        ],
+        [
+          12.5,
+          25.0
+        ],
+        [
+          25.0,
+          37.5
+        ],
+        [
+          37.5,
+          50.0
+        ],
+        [
+          50.0,
+          62.5
+        ],
+        [
+          62.5,
+          75.0
+        ],
+        [
+          75.0,
+          87.5
+        ],
+        [
+          87.5,
+          100.0
+        ]
+      ],
+      "parents": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "stage": 8,
+      "phase": "time_windows",
+      "parts": 16,
+      "M": 50,
+      "N": 50,
+      "total_N": 800,
+      "tau": 0.125,
+      "lr": 0.0001,
+      "windows": [
+        [
+          0.0,
+          6.25
+        ],
+        [
+          6.25,
+          12.5
+        ],
+        [
+          12.5,
+          18.75
+        ],
+        [
+          18.75,
+          25.0
+        ],
+        [
+          25.0,
+          31.25
+        ],
+        [
+          31.25,
+          37.5
+        ],
+        [
+          37.5,
+          43.75
+        ],
+        [
+          43.75,
+          50.0
+        ],
+        [
+          50.0,
+          56.25
+        ],
+        [
+          56.25,
+          62.5
+        ],
+        [
+          62.5,
+          68.75
+        ],
+        [
+          68.75,
+          75.0
+        ],
+        [
+          75.0,
+          81.25
+        ],
+        [
+          81.25,
+          87.5
+        ],
+        [
+          87.5,
+          93.75
+        ],
+        [
+          93.75,
+          100.0
+        ]
+      ],
+      "parents": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        5,
+        5,
+        6,
+        6,
+        7,
+        7
+      ]
+    }
+  ],
+  "cpu_spatial_batch": 1,
+  "cuda_spatial_batch": 7,
+  "note": "5000 updates per active window, not per whole decomposed stage; no accuracy guarantee"
+}

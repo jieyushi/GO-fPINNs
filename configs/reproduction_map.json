@@ -1,0 +1,225 @@
+{
+  "figures": [
+    {
+      "case": "method",
+      "manuscript_file": "graphical_abstract.pdf",
+      "source_candidates": [
+        "method_diagrams/graphical_abstract.pdf"
+      ],
+      "note": "Reconstructed vector schematic; original artwork geometry is not reproduced."
+    },
+    {
+      "case": "method",
+      "manuscript_file": "map.pdf",
+      "source_candidates": [
+        "method_diagrams/map.pdf"
+      ],
+      "note": "Reconstructed vector schematic; original artwork geometry is not reproduced."
+    },
+    {
+      "case": "method",
+      "manuscript_file": "Figure_1_revise.pdf",
+      "source_candidates": [
+        "method_diagrams/Figure_1_revise.pdf"
+      ],
+      "note": "Reconstructed vector schematic; original artwork geometry is not reproduced."
+    },
+    {
+      "case": "method",
+      "manuscript_file": "Figure_2_revise.pdf",
+      "source_candidates": [
+        "method_diagrams/Figure_2_revise.pdf"
+      ],
+      "note": "Reconstructed vector schematic; original artwork geometry is not reproduced."
+    },
+    {
+      "case": "C01",
+      "manuscript_file": "Figure_3_revise.pdf",
+      "source_candidates": [
+        "C01/figures/seed_{seed}/Figure_3_revise.pdf"
+      ]
+    },
+    {
+      "case": "C01",
+      "manuscript_file": "Figure_4_revise.pdf",
+      "source_candidates": [
+        "C01/figures/seed_{seed}/Figure_4.pdf"
+      ]
+    },
+    {
+      "case": "C01",
+      "manuscript_file": "Figure_5_revise.pdf",
+      "source_candidates": [
+        "C01/figures/seed_{seed}/Figure_5.pdf"
+      ]
+    },
+    {
+      "case": "C02",
+      "manuscript_file": "Figure_6_revise.pdf",
+      "source_candidates": [
+        "C02/figures/seed_{seed}/Figure_6.pdf"
+      ]
+    },
+    {
+      "case": "C02",
+      "manuscript_file": "Figure_7_revise.pdf",
+      "source_candidates": [
+        "C02/figures/seed_{seed}/Figure_7.pdf"
+      ]
+    },
+    {
+      "case": "C03",
+      "manuscript_file": "Figure_8_revise.pdf",
+      "source_candidates": [
+        "C03/seed_{seed}/figures/Figure_8_GO.pdf"
+      ],
+      "note": "GO-fPINNs only; the historical baseline comparison is unavailable.",
+      "collection_name": "Figure_8_GO.pdf"
+    },
+    {
+      "case": "C03",
+      "manuscript_file": "Figure_9_revise.pdf",
+      "source_candidates": [
+        "C03/seed_{seed}/figures/Figure_9_GO.pdf"
+      ],
+      "note": "GO-fPINNs only; the historical baseline comparison is unavailable.",
+      "collection_name": "Figure_9_GO.pdf"
+    },
+    {
+      "case": "I01",
+      "manuscript_file": "Figure_10_revise.pdf",
+      "source_candidates": [
+        "I01/figures/seed_{seed}/Figure_10_revise.pdf"
+      ]
+    },
+    {
+      "case": "I02",
+      "manuscript_file": "Figure_11_revise.pdf",
+      "source_candidates": [
+        "I02/figures/manufactured_series/seed_{seed}/Figure_11_revise.pdf"
+      ]
+    },
+    {
+      "case": "I03",
+      "manuscript_file": "Figure_12_revise.pdf",
+      "source_candidates": [
+        "I03/figures/seed_{seed}/Figure_12_revise.pdf"
+      ]
+    },
+    {
+      "case": "OP1",
+      "manuscript_file": "Figure_13_revise.pdf",
+      "source_candidates": [
+        "OP1/figures/Figure_13_revise.pdf"
+      ],
+      "note": "The optional L1 baseline is an explicit reimplementation; the undefined historical noise curve is not recreated."
+    },
+    {
+      "case": "OP1",
+      "manuscript_file": "Figure_14_revise.pdf",
+      "source_candidates": [
+        "OP1/figures/Figure_14_revise.pdf"
+      ],
+      "note": "The optional L1 baseline is an explicit reimplementation; the undefined historical noise curve is not recreated."
+    },
+    {
+      "case": "OP2",
+      "manuscript_file": "Figure_add1.pdf",
+      "source_candidates": [
+        "OP2/seed_{seed}/paper_data/figures/Figure_add1.pdf"
+      ]
+    },
+    {
+      "case": "OP3",
+      "manuscript_file": "Figure_add3.pdf",
+      "source_candidates": [
+        "OP3/reports/case3_lhs/figures/Figure_add3.pdf"
+      ]
+    },
+    {
+      "case": "OP3",
+      "manuscript_file": "Figure_add2.pdf",
+      "source_candidates": [
+        "OP3/reports/case3_lhs/figures/Figure_add2.pdf"
+      ]
+    },
+    {
+      "case": "OP4",
+      "manuscript_file": "Figure_15_revise.pdf",
+      "source_candidates": [
+        "OP4/paper/seed_{seed}/figures/Figure_15_revise.pdf"
+      ]
+    },
+    {
+      "case": "OP4",
+      "manuscript_file": "Figure_16_revise.pdf",
+      "source_candidates": [
+        "OP4/paper/seed_{seed}/figures/Figure_16_revise.pdf"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "manuscript_label": "tab:intro_literature",
+      "source": "configs/static_table_templates.json:intro_literature",
+      "type": "descriptive"
+    },
+    {
+      "manuscript_label": "tab:method_nomenclature",
+      "source": "configs/static_table_templates.json:method_nomenclature",
+      "type": "descriptive"
+    },
+    {
+      "manuscript_label": "tab:forward_case_config",
+      "source": "configs/static_table_templates.json:forward_case_config",
+      "type": "configuration"
+    },
+    {
+      "manuscript_label": "tab:ex1_components",
+      "source": "C01/collected/",
+      "generator": "experiments/forward/C01/collect_case1.py"
+    },
+    {
+      "manuscript_label": "tab:ablation",
+      "source": "C01/collected/ablation_errors.tex",
+      "generator": "experiments/forward/C01/collect_case1.py"
+    },
+    {
+      "manuscript_label": "tab:unified_inverse_config",
+      "source": "configs/static_table_templates.json:unified_inverse_config",
+      "type": "configuration"
+    },
+    {
+      "manuscript_label": "tab:unified_inverse_performance",
+      "source": "I01/inverse_results.csv; I02/potential_results.csv; I03/potential2d_results.csv",
+      "generator": "scripts/export_tables.py",
+      "note": "Exports recorded cases separately; no undocumented initial-guess or noise aggregation is imposed."
+    },
+    {
+      "manuscript_label": "Table_operator_settings_compact",
+      "source": "configs/static_table_templates.json:Table_operator_settings_compact",
+      "type": "configuration"
+    },
+    {
+      "manuscript_label": "tab:operator_control",
+      "source": "OPA/aggregated/results_tables.tex",
+      "generator": "experiments/operator/case1/legacy_alpha_ablation/collect_results.py"
+    },
+    {
+      "manuscript_label": "tab:fixed_beta_gamma_reference_convergence",
+      "source": "OP3/reports/adi_convergence/reference_convergence.tex",
+      "generator": "experiments/operator/case3/check_reference_convergence.py"
+    },
+    {
+      "manuscript_label": "tab:bright_ADI_convergence",
+      "source": "OP4/convergence/",
+      "generator": "experiments/operator/case4/check_reference_convergence.py"
+    },
+    {
+      "manuscript_label": "tab:operator_error",
+      "source": "OP1/aggregated/operator_metrics.tex; OP2/joint_summary/paper_operator_error_row.tex; OP3/reports/case3_lhs/tables/final_metrics_row.tex; OP4/runs/paper_operator_error_row.tex",
+      "generator": "scripts/export_tables.py",
+      "note": "Case-native metric and mask definitions are preserved; cells are not copied from the manuscript."
+    }
+  ]
+}

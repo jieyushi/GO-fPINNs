@@ -1,0 +1,590 @@
+{
+  "schema": "case1_single_mu_holdout_v1",
+  "operator": "beta",
+  "active_index": 1,
+  "parameter_names": [
+    "alpha",
+    "beta_dispersion",
+    "gamma_nonlinearity"
+  ],
+  "active_range_open": [
+    0.5,
+    1.5
+  ],
+  "inactive_values_from": [
+    0.800000011920929,
+    1.0,
+    1.0
+  ],
+  "sampling": "train: fixed interior nested 4/5/6 design; validation/test: independent uniform active values; float32 disjoint",
+  "split_seed": 20261017,
+  "parameter_rng_streams": {
+    "training": 1,
+    "validation": 2,
+    "test": 3
+  },
+  "coordinate_rng_streams": {
+    "validation": 11,
+    "test": 12,
+    "training_diagnostic": 13
+  },
+  "grids_intervals": [
+    5,
+    7,
+    9
+  ],
+  "full_grid_points_per_axis": [
+    6,
+    8,
+    10
+  ],
+  "stage_parameter_counts": [
+    4,
+    5,
+    6
+  ],
+  "evaluation_points_per_parameter": 4096,
+  "training": [
+    {
+      "parameter_id": "train_0000",
+      "mu": [
+        0.800000011920929,
+        0.5000000596046448,
+        1.0
+      ],
+      "active_value": 0.5000000596046448,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.5000000596046448,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "train_0001",
+      "mu": [
+        0.800000011920929,
+        0.8333333134651184,
+        1.0
+      ],
+      "active_value": 0.8333333134651184,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.8333333134651184,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "train_0002",
+      "mu": [
+        0.800000011920929,
+        1.1666666269302368,
+        1.0
+      ],
+      "active_value": 1.1666666269302368,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.1666666269302368,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "train_0003",
+      "mu": [
+        0.800000011920929,
+        1.4999998807907104,
+        1.0
+      ],
+      "active_value": 1.4999998807907104,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4999998807907104,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "train_0004",
+      "mu": [
+        0.800000011920929,
+        0.6666666865348816,
+        1.0
+      ],
+      "active_value": 0.6666666865348816,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6666666865348816,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "train_0005",
+      "mu": [
+        0.800000011920929,
+        1.3333333730697632,
+        1.0
+      ],
+      "active_value": 1.3333333730697632,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3333333730697632,
+      "gamma_nonlinearity": 1.0
+    }
+  ],
+  "validation": [
+    {
+      "parameter_id": "validation_0000",
+      "mu": [
+        0.800000011920929,
+        1.181949257850647,
+        1.0
+      ],
+      "active_value": 1.181949257850647,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.181949257850647,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "validation_0001",
+      "mu": [
+        0.800000011920929,
+        1.277407169342041,
+        1.0
+      ],
+      "active_value": 1.277407169342041,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.277407169342041,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "validation_0002",
+      "mu": [
+        0.800000011920929,
+        1.0362002849578857,
+        1.0
+      ],
+      "active_value": 1.0362002849578857,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0362002849578857,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "validation_0003",
+      "mu": [
+        0.800000011920929,
+        0.6542659401893616,
+        1.0
+      ],
+      "active_value": 0.6542659401893616,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6542659401893616,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "validation_0004",
+      "mu": [
+        0.800000011920929,
+        0.6643774509429932,
+        1.0
+      ],
+      "active_value": 0.6643774509429932,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6643774509429932,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "validation_0005",
+      "mu": [
+        0.800000011920929,
+        1.3680585622787476,
+        1.0
+      ],
+      "active_value": 1.3680585622787476,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3680585622787476,
+      "gamma_nonlinearity": 1.0
+    }
+  ],
+  "test": [
+    {
+      "parameter_id": "test_0000",
+      "mu": [
+        0.800000011920929,
+        0.5397922396659851,
+        1.0
+      ],
+      "active_value": 0.5397922396659851,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.5397922396659851,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0001",
+      "mu": [
+        0.800000011920929,
+        1.495180606842041,
+        1.0
+      ],
+      "active_value": 1.495180606842041,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.495180606842041,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0002",
+      "mu": [
+        0.800000011920929,
+        1.3838046789169312,
+        1.0
+      ],
+      "active_value": 1.3838046789169312,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3838046789169312,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0003",
+      "mu": [
+        0.800000011920929,
+        0.9170520305633545,
+        1.0
+      ],
+      "active_value": 0.9170520305633545,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.9170520305633545,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0004",
+      "mu": [
+        0.800000011920929,
+        1.3495749235153198,
+        1.0
+      ],
+      "active_value": 1.3495749235153198,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3495749235153198,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0005",
+      "mu": [
+        0.800000011920929,
+        1.4657559394836426,
+        1.0
+      ],
+      "active_value": 1.4657559394836426,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4657559394836426,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0006",
+      "mu": [
+        0.800000011920929,
+        1.4785608053207397,
+        1.0
+      ],
+      "active_value": 1.4785608053207397,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4785608053207397,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0007",
+      "mu": [
+        0.800000011920929,
+        0.5606930255889893,
+        1.0
+      ],
+      "active_value": 0.5606930255889893,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.5606930255889893,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0008",
+      "mu": [
+        0.800000011920929,
+        0.5529534220695496,
+        1.0
+      ],
+      "active_value": 0.5529534220695496,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.5529534220695496,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0009",
+      "mu": [
+        0.800000011920929,
+        0.7515974640846252,
+        1.0
+      ],
+      "active_value": 0.7515974640846252,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.7515974640846252,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0010",
+      "mu": [
+        0.800000011920929,
+        1.4954469203948975,
+        1.0
+      ],
+      "active_value": 1.4954469203948975,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.4954469203948975,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0011",
+      "mu": [
+        0.800000011920929,
+        1.290313482284546,
+        1.0
+      ],
+      "active_value": 1.290313482284546,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.290313482284546,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0012",
+      "mu": [
+        0.800000011920929,
+        1.0309576988220215,
+        1.0
+      ],
+      "active_value": 1.0309576988220215,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0309576988220215,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0013",
+      "mu": [
+        0.800000011920929,
+        0.8314732909202576,
+        1.0
+      ],
+      "active_value": 0.8314732909202576,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.8314732909202576,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0014",
+      "mu": [
+        0.800000011920929,
+        0.7853490710258484,
+        1.0
+      ],
+      "active_value": 0.7853490710258484,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.7853490710258484,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0015",
+      "mu": [
+        0.800000011920929,
+        1.245147466659546,
+        1.0
+      ],
+      "active_value": 1.245147466659546,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.245147466659546,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0016",
+      "mu": [
+        0.800000011920929,
+        1.3566619157791138,
+        1.0
+      ],
+      "active_value": 1.3566619157791138,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.3566619157791138,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0017",
+      "mu": [
+        0.800000011920929,
+        0.7351645827293396,
+        1.0
+      ],
+      "active_value": 0.7351645827293396,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.7351645827293396,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0018",
+      "mu": [
+        0.800000011920929,
+        0.9074813723564148,
+        1.0
+      ],
+      "active_value": 0.9074813723564148,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.9074813723564148,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0019",
+      "mu": [
+        0.800000011920929,
+        0.9373437762260437,
+        1.0
+      ],
+      "active_value": 0.9373437762260437,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.9373437762260437,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0020",
+      "mu": [
+        0.800000011920929,
+        0.8983859419822693,
+        1.0
+      ],
+      "active_value": 0.8983859419822693,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.8983859419822693,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0021",
+      "mu": [
+        0.800000011920929,
+        0.808844804763794,
+        1.0
+      ],
+      "active_value": 0.808844804763794,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.808844804763794,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0022",
+      "mu": [
+        0.800000011920929,
+        0.8933248519897461,
+        1.0
+      ],
+      "active_value": 0.8933248519897461,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.8933248519897461,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0023",
+      "mu": [
+        0.800000011920929,
+        1.1308379173278809,
+        1.0
+      ],
+      "active_value": 1.1308379173278809,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.1308379173278809,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0024",
+      "mu": [
+        0.800000011920929,
+        1.2568676471710205,
+        1.0
+      ],
+      "active_value": 1.2568676471710205,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.2568676471710205,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0025",
+      "mu": [
+        0.800000011920929,
+        1.2195976972579956,
+        1.0
+      ],
+      "active_value": 1.2195976972579956,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.2195976972579956,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0026",
+      "mu": [
+        0.800000011920929,
+        1.435628056526184,
+        1.0
+      ],
+      "active_value": 1.435628056526184,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.435628056526184,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0027",
+      "mu": [
+        0.800000011920929,
+        0.6127747893333435,
+        1.0
+      ],
+      "active_value": 0.6127747893333435,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.6127747893333435,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0028",
+      "mu": [
+        0.800000011920929,
+        0.9078930020332336,
+        1.0
+      ],
+      "active_value": 0.9078930020332336,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 0.9078930020332336,
+      "gamma_nonlinearity": 1.0
+    },
+    {
+      "parameter_id": "test_0029",
+      "mu": [
+        0.800000011920929,
+        1.0497255325317383,
+        1.0
+      ],
+      "active_value": 1.0497255325317383,
+      "alpha": 0.800000011920929,
+      "beta_dispersion": 1.0497255325317383,
+      "gamma_nonlinearity": 1.0
+    }
+  ],
+  "stage_training_ids": [
+    [
+      "train_0000",
+      "train_0001",
+      "train_0002",
+      "train_0003"
+    ],
+    [
+      "train_0000",
+      "train_0001",
+      "train_0002",
+      "train_0003",
+      "train_0004"
+    ],
+    [
+      "train_0000",
+      "train_0001",
+      "train_0002",
+      "train_0003",
+      "train_0004",
+      "train_0005"
+    ]
+  ],
+  "replication": "fixed parameter split and evaluation coordinates; independent training seeds",
+  "test_use": "final evaluation only, after validation selects and saves final.pt",
+  "coordinate_order": [
+    "t",
+    "x",
+    "y"
+  ],
+  "source_family": "u=v=t^(1+alpha)*sin(pi*beta*x)*sin(pi*gamma*y)",
+  "core_mapping": "[alpha,D,beta] = paper [alpha,beta,gamma]",
+  "design_sha256": "8f122c3186f40798e784f9c715f993c346f5c474431b005765ac9dae7bae3563"
+}

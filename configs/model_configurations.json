@@ -1,0 +1,197 @@
+{
+  "C01": {
+    "gate": 0,
+    "coordinate_order": [
+      "t",
+      "x"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 3,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/forward/C01/train_case1.py",
+    "counting_convention": "one input hidden block plus two additional hidden blocks; scalar output excluded"
+  },
+  "C02": {
+    "gate": 0,
+    "coordinate_order": [
+      "t",
+      "x"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 3,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/forward/C02/train_largescale.py",
+    "counting_convention": "one input hidden block plus two additional hidden blocks; scalar output excluded"
+  },
+  "C03": {
+    "gate": 0,
+    "coordinate_order": [
+      "t",
+      "x"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 3,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/forward/C03/train_longtime.py",
+    "counting_convention": "one input hidden block plus two additional hidden blocks; scalar output excluded"
+  },
+  "I01": {
+    "gate": 0,
+    "coordinate_order": [
+      "t",
+      "x"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 4,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/inverse/I01/train_inverse.py",
+    "counting_convention": "one input hidden block plus three additional hidden blocks; scalar output excluded"
+  },
+  "I02": {
+    "gate": 0,
+    "coordinate_order": [
+      "t",
+      "x"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 4,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/inverse/I02/train_potential.py",
+    "counting_convention": "one input hidden block plus three additional hidden blocks; scalar output excluded"
+  },
+  "I03": {
+    "gate": 0,
+    "coordinate_order": [
+      "t",
+      "x",
+      "y"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 4,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/inverse/I03/train_potential2d.py",
+    "counting_convention": "one input hidden block plus three additional hidden blocks; scalar output excluded"
+  },
+  "OP1": {
+    "gate": 1,
+    "coordinate_order": [
+      "t",
+      "x",
+      "y"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 5,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/operator/case1/train_single_operator.py",
+    "parameter_encoder": {
+      "input_parameters": [
+        "alpha",
+        "beta",
+        "gamma"
+      ],
+      "fourier_lifted_input_dimension": 9,
+      "hidden_layers": 2,
+      "hidden_width": 64,
+      "latent_output_dimension": 16,
+      "solution_network_input_dimension": 19
+    }
+  },
+  "OP2": {
+    "gate": 1,
+    "coordinate_order": [
+      "t",
+      "x",
+      "y"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 5,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/operator/case2/train_joint_operator.py",
+    "parameter_encoder": {
+      "input_parameters": [
+        "alpha",
+        "beta",
+        "gamma"
+      ],
+      "fourier_lifted_input_dimension": 9,
+      "hidden_layers": 2,
+      "hidden_width": 64,
+      "latent_output_dimension": 16,
+      "solution_network_input_dimension": 19
+    }
+  },
+  "OP3": {
+    "gate": 1,
+    "coordinate_order": [
+      "t",
+      "x",
+      "y"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 5,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/operator/case3/train_sampling.py",
+    "parameter_encoder": {
+      "input_parameters": [
+        "alpha",
+        "beta",
+        "gamma"
+      ],
+      "fourier_lifted_input_dimension": 9,
+      "hidden_layers": 2,
+      "hidden_width": 64,
+      "latent_output_dimension": 16,
+      "solution_network_input_dimension": 19
+    }
+  },
+  "OP4": {
+    "gate": 1,
+    "coordinate_order": [
+      "t",
+      "x",
+      "y"
+    ],
+    "real_and_imaginary_networks": 2,
+    "hidden_layers_per_solution_network": 5,
+    "neurons_per_hidden_layer": 60,
+    "scalar_outputs_per_solution_network": 1,
+    "activation": "adaptive dual-tanh",
+    "training_script": "experiments/operator/case4/train_bright_hump.py",
+    "parameter_encoder": {
+      "input_parameters": [
+        "alpha",
+        "beta",
+        "gamma"
+      ],
+      "fourier_lifted_input_dimension": 9,
+      "hidden_layers": 2,
+      "hidden_width": 64,
+      "latent_output_dimension": 16,
+      "solution_network_input_dimension": 19
+    }
+  },
+  "notes": [
+    "Ablation variants change only their documented components.",
+    "CLI defaults and experiment protocol modules are authoritative.",
+    "Domain-decomposition stages use the stated solution network on each subdomain or time window."
+  ],
+  "configuration_scope": "GO-fPINNs defaults; baseline and ablation settings are specified in their own drivers."
+}

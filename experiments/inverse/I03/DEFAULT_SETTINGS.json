@@ -1,0 +1,100 @@
+{
+  "args": {
+    "method": "go_multi",
+    "supervised_points": 9,
+    "seed": 1234,
+    "data_seed": 77123,
+    "output": "runs/I03_gradient_v2/eta_9/go_multi/seed_1234",
+    "resume": false,
+    "device": "cpu",
+    "width": 60,
+    "extra_hidden_layers": 3,
+    "network_dtype": "float32",
+    "freeze_hypernet": false,
+    "activation_initial": 0.1,
+    "activation_scale": 10.0,
+    "activation_lr_ratio": 0.1,
+    "hyper_lr_ratio": 1.0,
+    "matmul_precision": "high",
+    "eta_weight": 1.0,
+    "w_grad": 0.001,
+    "consistency_mode": "frozen",
+    "condition_points": 100,
+    "noise_level": 0.0,
+    "history_rule": "soe",
+    "history_evaluation": "fft",
+    "quad_order": 8,
+    "panel_width": 1.0,
+    "low_tail": 1e-06,
+    "spatial_batch": 7,
+    "max_epochs_per_stage": 10000,
+    "eval_every": 100,
+    "patience_evals": 10,
+    "checkpoint_every": 100,
+    "eta_eval_nodes": 101,
+    "reference_points": 4096,
+    "reference_seed": 77201,
+    "threads": 1,
+    "smoke": false
+  },
+  "methods": {
+    "fl1": [
+      {
+        "stage": 0,
+        "M": 12,
+        "N": 12,
+        "observations": 100,
+        "degree": null,
+        "lr": 0.0005,
+        "scheme": "fast_l1"
+      }
+    ],
+    "go_multi": [
+      {
+        "stage": 0,
+        "M": 6,
+        "N": 6,
+        "observations": 10,
+        "degree": 0,
+        "lr": 0.001,
+        "scheme": "fast_l21"
+      },
+      {
+        "stage": 1,
+        "M": 8,
+        "N": 8,
+        "observations": 25,
+        "degree": 1,
+        "lr": 0.0005,
+        "scheme": "fast_l21"
+      },
+      {
+        "stage": 2,
+        "M": 10,
+        "N": 10,
+        "observations": 50,
+        "degree": 2,
+        "lr": 0.00025,
+        "scheme": "fast_l21"
+      },
+      {
+        "stage": 3,
+        "M": 12,
+        "N": 12,
+        "observations": 100,
+        "degree": 3,
+        "lr": 0.000125,
+        "scheme": "fast_l21"
+      }
+    ]
+  },
+  "gradient_enhancement": {
+    "enabled_for": "go_multi only; fl1 always disables GE",
+    "base_weight": 0.001,
+    "active_weight": "w_grad*exp(-3*loss_f.detach())",
+    "target": "t/x/y coordinate derivatives of local minus fixed true_local; includes trainable eta_x and eta_y; excludes Caputo forcing part"
+  },
+  "per_stage_hard_maximum": 10000,
+  "device_note": "auto CUDA:0 when available, otherwise CPU; spatial batch default CUDA=0/full, CPU=7",
+  "eta_metric": "full Cartesian eta_eval_nodes squared grid; Frobenius/vector L2"
+}

@@ -1,0 +1,94 @@
+{
+  "args": {
+    "method": "go_multi",
+    "problem": "manufactured_series",
+    "supervised_points": 3,
+    "seed": 1234,
+    "data_seed": 77123,
+    "output": "runs/I02_gradient_v2/manufactured_series/eta_3/go_multi/seed_1234",
+    "resume": false,
+    "device": "cpu",
+    "width": 60,
+    "extra_hidden_layers": 3,
+    "network_dtype": "float32",
+    "freeze_hypernet": false,
+    "observation_weight": 0.1,
+    "eta_weight": 1.0,
+    "w_grad": 0.001,
+    "consistency_mode": "frozen",
+    "condition_points": 100,
+    "noise_level": 0.0,
+    "history_rule": "soe",
+    "history_evaluation": "fft",
+    "quad_order": 8,
+    "panel_width": 1.0,
+    "low_tail": 1e-06,
+    "spatial_batch": 7,
+    "max_epochs_per_stage": 10000,
+    "eval_every": 100,
+    "patience_evals": 10,
+    "checkpoint_every": 100,
+    "reference": "runs/I02/reference_zero_source_256x1024.npz",
+    "reference_nx": 256,
+    "reference_nt": 1024,
+    "reference_points": 512,
+    "reference_seed": 77201,
+    "threads": 1,
+    "smoke": false
+  },
+  "methods": {
+    "fl1": [
+      {
+        "stage": 0,
+        "M": 30,
+        "N": 30,
+        "observations": 100,
+        "degree": null,
+        "lr": 0.0005,
+        "scheme": "fast_l1"
+      }
+    ],
+    "go_multi": [
+      {
+        "stage": 0,
+        "M": 10,
+        "N": 10,
+        "observations": 25,
+        "degree": 0,
+        "lr": 0.001,
+        "scheme": "fast_l21"
+      },
+      {
+        "stage": 1,
+        "M": 20,
+        "N": 20,
+        "observations": 50,
+        "degree": 1,
+        "lr": 0.0005,
+        "scheme": "fast_l21"
+      },
+      {
+        "stage": 2,
+        "M": 30,
+        "N": 30,
+        "observations": 100,
+        "degree": 2,
+        "lr": 0.00025,
+        "scheme": "fast_l21"
+      }
+    ]
+  },
+  "gradient_enhancement": {
+    "enabled_for": "go_multi only; fl1 always disables GE",
+    "base_weight": 0.001,
+    "active_weight": "w_grad*exp(-3*loss_f.detach())",
+    "zero_source": "full discrete residual space derivative including H(field_x) and eta_x; complete sigma residual time FD with centered interior and one-sided first/last, dt=1/N",
+    "manufactured_series": "full discrete residual x including H(field_x), eta_x and -f_x; complete sigma residual time FD including -f"
+  },
+  "per_stage_hard_maximum": 10000,
+  "device_note": "auto cuda:0 when available, otherwise CPU; spatial batch default CUDA=0/full, CPU=7",
+  "extra_counts": "25->50->100 terminal field observations, distinct from 2/3 eta supervised points",
+  "source": "sin(x)^3 * (1-|E_0.5(-1.5*i*sqrt(t))|^2) * E_0.5(-1.5*i*sqrt(t))",
+  "reference": "analytic manufactured field sin(x)*E_0.5(-1.5*i*sqrt(t)); independent of trainable potential",
+  "reference_note": "The reference cache arguments are used only by the explicit zero_source alternative."
+}

@@ -1,0 +1,146 @@
+{
+  "format": "I01_supplied_scripts_constant_inverse_v1",
+  "default_args": {
+    "method": "go_multi",
+    "unknown": "alpha",
+    "initial": ".5",
+    "seed": 1234,
+    "data_seed": 77123,
+    "output": "runs/I01_gradient_v2/alpha_p5/go_multi/seed_1234",
+    "resume": false,
+    "device": "cpu",
+    "width": 60,
+    "extra_hidden_layers": 3,
+    "network_dtype": "float32",
+    "shared_update": "legacy_double",
+    "physical_lr_scale": 1.0,
+    "freeze_hypernet": false,
+    "w_grad": 0.001,
+    "gradient_mode": "script",
+    "consistency_mode": "frozen",
+    "noise_level": 0.0,
+    "condition_points": 100,
+    "history_rule": "soe",
+    "history_evaluation": "fft",
+    "quad_order": 8,
+    "panel_width": 1.0,
+    "low_tail": 1e-06,
+    "alpha_min": 0.0001,
+    "alpha_max": 0.9999,
+    "spatial_batch": 7,
+    "max_epochs_per_stage": 10000,
+    "eval_every": 100,
+    "patience_evals": 10,
+    "checkpoint_every": 100,
+    "reference_points": 4096,
+    "reference_seed": 77201,
+    "threads": 1,
+    "smoke": false,
+    "initial_values": [
+      0.5
+    ]
+  },
+  "methods": {
+    "fl1": [
+      {
+        "stage": 0,
+        "M": 50,
+        "N": 50,
+        "observations": 50,
+        "lr": 0.0005,
+        "scheme": "fast_l1"
+      }
+    ],
+    "go_single": [
+      {
+        "stage": 0,
+        "M": 50,
+        "N": 50,
+        "observations": 50,
+        "lr": 0.0005,
+        "scheme": "fast_l21"
+      }
+    ],
+    "go_multi": [
+      {
+        "stage": 0,
+        "M": 10,
+        "N": 10,
+        "observations": 10,
+        "lr": 0.001,
+        "scheme": "fast_l21"
+      },
+      {
+        "stage": 1,
+        "M": 20,
+        "N": 20,
+        "observations": 20,
+        "lr": 0.0005,
+        "scheme": "fast_l21"
+      },
+      {
+        "stage": 2,
+        "M": 30,
+        "N": 30,
+        "observations": 30,
+        "lr": 0.00025,
+        "scheme": "fast_l21"
+      },
+      {
+        "stage": 3,
+        "M": 40,
+        "N": 40,
+        "observations": 40,
+        "lr": 0.000125,
+        "scheme": "fast_l21"
+      },
+      {
+        "stage": 4,
+        "M": 50,
+        "N": 50,
+        "observations": 50,
+        "lr": 6.25e-05,
+        "scheme": "fast_l21"
+      }
+    ]
+  },
+  "cases": [
+    "alpha_0p1",
+    "alpha_0p3",
+    "alpha_0p5",
+    "beta_0p1",
+    "beta_0p5",
+    "beta_2p0",
+    "gamma_0p1",
+    "gamma_0p5",
+    "gamma_2p0",
+    "joint_0p5"
+  ],
+  "device_note": "auto CUDA:0 when available, otherwise CPU; default spatial batch CUDA=0/full, CPU=7",
+  "interval_counts": true,
+  "per_stage_hard_maximum": 10000,
+  "physical_optimizer": "independent single Adam",
+  "gradient_enhancement": {
+    "policy": "I01_local_GE_xt_default_v2",
+    "requested_mode": "script",
+    "coordinate_order": [
+      "t",
+      "x"
+    ],
+    "selected_axes": [
+      "t",
+      "x"
+    ],
+    "effective_axes": [
+      "t",
+      "x"
+    ],
+    "enabled": true,
+    "definition": "sum over selected axes and real/imaginary components of mean((d(local)/d(axis)-d(f_local_TRUE)/d(axis))^2)",
+    "local": "beta*u_xx + gamma*|u|^2*u",
+    "target": "derivatives of the fixed TRUE local manufactured source, at current sigma coordinates",
+    "full_caputo_residual_gradient": false,
+    "w0": 0.001,
+    "effective_weight": "w0*exp(-3*loss_f.detach()) for GO; zero for FL1"
+  }
+}

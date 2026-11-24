@@ -1,0 +1,80 @@
+{
+  "case": 1,
+  "operators": [
+    "alpha",
+    "beta",
+    "gamma"
+  ],
+  "three_separately_trained_models": true,
+  "inputs": {
+    "alpha": [
+      "alpha",
+      1,
+      1
+    ],
+    "beta": [
+      0.8,
+      "beta",
+      1
+    ],
+    "gamma": [
+      0.8,
+      1,
+      "gamma"
+    ]
+  },
+  "open_ranges": {
+    "alpha": [
+      0.6,
+      0.9
+    ],
+    "beta": [
+      0.5,
+      1.5
+    ],
+    "gamma": [
+      1,
+      2
+    ]
+  },
+  "train_counts": [
+    4,
+    5,
+    6
+  ],
+  "validation_count": 6,
+  "test_count": 30,
+  "grid_nodes_per_axis": [
+    6,
+    8,
+    10
+  ],
+  "grid_intervals_per_axis": [
+    5,
+    7,
+    9
+  ],
+  "evaluation_points_per_parameter": 4096,
+  "stage_learning_rates": [
+    0.001,
+    0.0005,
+    0.00025
+  ],
+  "max_epochs_per_stage": 5000,
+  "early_stop": {
+    "check_every_updates": 100,
+    "patience_checks": 10,
+    "min_delta": 0
+  },
+  "stop_monitor": "unweighted fixed clean validation LF+LBC+LIC",
+  "checkpoint_selection": "validation macro relative L2, never test",
+  "training_seeds": [
+    1234,
+    1235,
+    1236
+  ],
+  "split_seed": 20261017,
+  "data_noise_level": 0.0,
+  "optional_baseline": "L1-DeepONet reconstruction; original baseline source unavailable",
+  "controlled_ablation": "separate legacy entry, fixed 5000x3, 20 test orders"
+}
